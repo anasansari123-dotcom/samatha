@@ -27,31 +27,50 @@ const articles = [
 
 function BookIcon() {
   return (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path
-        d="M5 5.5C5 4.7 5.7 4 6.5 4H12V18H6.5C5.7 18 5 17.3 5 16.5V5.5Z"
-        stroke="currentColor"
-        strokeWidth="1.7"
-      />
-      <path
-        d="M19 5.5C19 4.7 18.3 4 17.5 4H12V18H17.5C18.3 18 19 17.3 19 16.5V5.5Z"
-        stroke="currentColor"
-        strokeWidth="1.7"
-      />
+    <svg
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M12 7v14" />
+      <path d="M16 12h2" />
+      <path d="M16 8h2" />
+      <path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z" />
+      <path d="M6 12h2" />
+      <path d="M6 8h2" />
     </svg>
   );
 }
 
 function CalendarIcon() {
   return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <rect x="3.5" y="5" width="17" height="15" rx="2" stroke="currentColor" strokeWidth="1.6" />
-      <path
-        d="M8 3.5V7M16 3.5V7M3.5 10H20.5"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-      />
+    <svg
+      width="14"
+      height="14"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M8 2v4" />
+      <path d="M16 2v4" />
+      <rect width="18" height="18" x="3" y="4" rx="2" />
+      <path d="M3 10h18" />
+      <path d="M8 14h.01" />
+      <path d="M12 14h.01" />
+      <path d="M16 14h.01" />
+      <path d="M8 18h.01" />
+      <path d="M12 18h.01" />
+      <path d="M16 18h.01" />
     </svg>
   );
 }

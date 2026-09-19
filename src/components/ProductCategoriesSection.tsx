@@ -8,27 +8,27 @@ const categories = [
     id: "home",
     anchor: "renemu-home",
     tagline: "INDEPENDENT HOMES & SMART LIVING",
-    title: "reneμX Home",
+    title: "reneμ Home",
     description:
-      "Designed for independent homes seeking smarter energy management, reneμX Home combines clean energy solutions with intelligent monitoring for greater savings, convenience, and energy independence.",
+      "Designed for independent homes seeking smarter energy management, reneμ Home combines clean energy solutions with intelligent monitoring for greater savings, convenience, and energy independence.",
     icon: "home",
   },
   {
     id: "elite",
     anchor: "renemu-elite",
     tagline: "PREMIUM VILLAS & LUXURY SPACES",
-    title: "reneμX Elite",
+    title: "reneμ Elite",
     description:
-      "Crafted for premium villas and luxury spaces, reneμX Elite delivers advanced renewable energy solutions that seamlessly integrate sustainability, aesthetics, and high-performance energy management.",
+      "Crafted for premium villas and luxury spaces, reneμ Elite delivers advanced renewable energy solutions that seamlessly integrate sustainability, aesthetics, and high-performance energy management.",
     icon: "elite",
   },
   {
     id: "plus",
     anchor: "renemu-plus",
     tagline: "COMMERCIAL & INDUSTRIAL PROJECTS",
-    title: "reneμX Plus",
+    title: "reneμ Plus",
     description:
-      "Engineered for commercial, industrial and utility projects, reneμX Plus delivers customized renewable energy solutions tailored to resolve complex requirements, maximizing efficiency, reliability, and long-term business value with accurate ROI.",
+      "Engineered for commercial, industrial and utility projects, reneμ Plus delivers customized renewable energy solutions tailored to resolve complex requirements, maximizing efficiency, reliability, and long-term business value with accurate ROI.",
     icon: "plus",
   },
 ] as const;
@@ -135,8 +135,10 @@ export default function ProductCategoriesSection({
             <article
               key={category.id}
               id={category.anchor}
-              className={`scroll-mt-28 rounded-[20px] border bg-white p-6 shadow-[0_10px_28px_rgba(15,23,42,0.05)] sm:p-8 ${
-                isActive ? "border-[#2cb673]/45 ring-1 ring-[#2cb673]/15" : "border-[#E6EDF4]"
+              className={`scroll-mt-28 rounded-[20px] border bg-white p-6 shadow-[0_10px_28px_rgba(15,23,42,0.05)] transition-all duration-300 ease-out sm:p-8 ${
+                isActive
+                  ? "border-[#2cb673]/45 ring-1 ring-[#2cb673]/15 shadow-[0_16px_36px_rgba(44,182,115,0.12)]"
+                  : "border-[#E6EDF4] hover:-translate-y-0.5 hover:border-[#2cb673]/35 hover:shadow-[0_14px_32px_rgba(15,23,42,0.08)]"
               }`}
             >
               <span className="text-[#2cb673]">
@@ -154,7 +156,7 @@ export default function ProductCategoriesSection({
               <button
                 type="button"
                 onClick={() => openQuote(category.title)}
-                className="mt-6 inline-flex h-10 items-center justify-center rounded-full bg-[#2cb673] px-5 text-sm font-semibold text-white transition hover:bg-[#24a85f]"
+                className="mt-6 inline-flex h-10 items-center justify-center rounded-full bg-[#2cb673] px-5 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#24a85f] hover:shadow-[0_8px_18px_rgba(45,189,110,0.28)]"
               >
                 Get Service Quote
               </button>

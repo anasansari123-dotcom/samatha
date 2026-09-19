@@ -10,7 +10,7 @@ const officeDetails = [
   },
   {
     label: "OFFICE ADDRESS",
-    value: "No #53, Kowdenahalli, Kalkere Main Rd, Bengaluru, Karnataka 560016",
+    value: "No #53, Kowdenahalli, Kalkere Main Rd, K R Puram, Bengaluru, Karnataka 560016",
     icon: "pin",
   },
   {
@@ -38,29 +38,37 @@ const officeDetails = [
 ] as const;
 
 const serviceOptions = [
-  "Residential Solar",
-  "Commercial Solar",
-  "Industrial Solar",
-  "Hybrid / BESS",
-  "AMC / Service Support",
-  "Site Survey",
-  "Other",
+  "Residential Solar Installation",
+  "Commercial Solar Solutions",
+  "Industrial Solar Systems",
+  "Solar Panel Maintenance",
+  "Solar Consultation",
+  "Rooftop Solar Solutions",
 ];
+
+const officeMap = {
+  lat: 13.0192351,
+  lng: 77.6762471,
+};
+
+const officeMapsUrl =
+  "https://www.google.com/maps/place/13%C2%B001'09.3%22N+77%C2%B040'34.5%22E/@13.0192351,77.6736722,17z/data=!3m1!4b1!4m4!3m3!8m2!3d13.0192351!4d77.6762471";
+const officeMapsEmbedUrl = `https://www.google.com/maps/embed?origin=mfe&pb=!1m3!2m1!1s${officeMap.lat},${officeMap.lng}!6i17`;
 
 const quickActions = [
   {
     label: "Call Now",
-    href: "tel:8050018267",
+    href: "tel:+918050018267",
     icon: "phone",
   },
   {
     label: "WhatsApp Support",
-    href: "https://wa.me/918050018267",
+    href: "https://wa.me/918050018267?text=Hi%20Samatha%2C%20I%20need%20solar%20support.",
     icon: "whatsapp",
   },
   {
     label: "Book Site Visit",
-    href: "tel:8050018267",
+    href: "/contact#enquiry",
     icon: "pin",
   },
   {
@@ -141,17 +149,8 @@ function DetailIcon({ type }: { type: string }) {
       );
     case "whatsapp":
       return (
-        <svg {...common}>
-          <path
-            d="M5 19L6.2 15.2A7.5 7.5 0 1 1 8.8 17.1L5 19Z"
-            stroke="currentColor"
-            strokeWidth="1.6"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M9.2 10.2C9.5 10.2 9.7 10.3 9.9 10.6L10.6 11.8C10.7 12 10.7 12.2 10.6 12.4C10.5 12.6 10.2 13.1 9.8 13.5C9.4 13.9 10.2 14.6 10.8 15C11.4 15.4 12.1 15.8 12.6 15.9C12.8 15.9 13 15.9 13.1 15.7L14.1 14.5C14.3 14.3 14.5 14.3 14.8 14.4L16.2 14.9C16.5 15 16.7 15.2 16.7 15.5C16.7 16.5 15.9 17.2 14.9 17.2C12.2 17.2 9.5 14.7 8.8 12.2C8.6 11.3 8.8 10.3 9.2 10.2Z"
-            fill="currentColor"
-          />
+        <svg {...common} fill="currentColor">
+          <path d="M5 19L6.2 15.2A7.5 7.5 0 1 1 8.8 17.1L5 19Z" />
         </svg>
       );
     default:
@@ -170,174 +169,154 @@ export default function ContactDetailsSection() {
   return (
     <>
       <section id="enquiry" className="bg-[#eef3f8] px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-        <div className="mx-auto grid max-w-[1280px] gap-10 lg:grid-cols-2 lg:gap-12">
-          <div>
-            <p className="text-xs font-bold tracking-[0.16em] text-brand-green">
-              OFFICE CONTACT DETAILS
-            </p>
-            <h2 className="mt-3 font-display text-[clamp(1.5rem,2.8vw,2.1rem)] font-bold text-brand-navy">
-              Samatha Green Energy Solutions
-            </h2>
-            <p className="mt-3 max-w-lg text-[0.95rem] leading-relaxed text-slate-500">
-              Use the details below for enquiries, site visits, installation support, AMC
-              assistance, and renewable energy project planning.
-            </p>
-
-            <div className="mt-7 rounded-2xl border border-white bg-white p-5 shadow-[0_10px_28px_rgba(15,23,42,0.05)] sm:p-6">
-              <ul className="divide-y divide-slate-100">
-                {officeDetails.map((item) => (
-                  <li key={item.label} className="flex gap-4 py-4 first:pt-0 last:pb-0">
-                    <span className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-green/10 text-brand-green">
-                      <DetailIcon type={item.icon} />
-                    </span>
-                    <div>
-                      <p className="text-[0.7rem] font-bold tracking-[0.12em] text-brand-blue">
-                        {item.label}
-                      </p>
-                      {"href" in item && item.href ? (
-                        <a
-                          href={item.href}
-                          className="mt-1 block text-sm font-medium text-brand-navy transition hover:text-brand-green"
-                        >
-                          {item.value}
-                        </a>
-                      ) : (
-                        <p className="mt-1 text-sm font-medium text-brand-navy">{item.value}</p>
-                      )}
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          <div>
-            <p className="text-xs font-bold tracking-[0.16em] text-brand-green">SEND ENQUIRY</p>
-            <h2 className="mt-3 font-display text-[clamp(1.5rem,2.8vw,2.1rem)] font-bold text-brand-navy">
-              Tell Us About Your Requirement
-            </h2>
-            <p className="mt-3 max-w-lg text-[0.95rem] leading-relaxed text-slate-500">
-              Share your project or support requirement and our team will respond with the next
-              step.
-            </p>
-
-            <form
-              onSubmit={handleSubmit}
-              className="mt-7 rounded-2xl border border-white bg-white p-5 shadow-[0_10px_28px_rgba(15,23,42,0.05)] sm:p-6"
-            >
-              <div className="space-y-4">
-                <label className="block">
-                  <span className="mb-1.5 block text-sm font-medium text-slate-600">Name</span>
-                  <input
-                    required
-                    type="text"
-                    name="name"
-                    placeholder="Your name"
-                    className="h-11 w-full rounded-lg border border-slate-200 bg-white px-3 text-brand-navy outline-none transition focus:border-brand-green focus:ring-2 focus:ring-brand-green/20"
-                  />
-                </label>
-
-                <label className="block">
-                  <span className="mb-1.5 block text-sm font-medium text-slate-600">Phone</span>
-                  <input
-                    required
-                    type="tel"
-                    name="phone"
-                    placeholder="Phone number"
-                    className="h-11 w-full rounded-lg border border-slate-200 bg-white px-3 text-brand-navy outline-none transition focus:border-brand-green focus:ring-2 focus:ring-brand-green/20"
-                  />
-                </label>
-
-                <label className="block">
-                  <span className="mb-1.5 block text-sm font-medium text-slate-600">Email</span>
-                  <input
-                    required
-                    type="email"
-                    name="email"
-                    placeholder="Email address"
-                    className="h-11 w-full rounded-lg border border-slate-200 bg-white px-3 text-brand-navy outline-none transition focus:border-brand-green focus:ring-2 focus:ring-brand-green/20"
-                  />
-                </label>
-
-                <label className="block">
-                  <span className="mb-1.5 block text-sm font-medium text-slate-600">
-                    Service Required
+        <div className="mx-auto grid max-w-[1280px] items-stretch gap-6 lg:grid-cols-2 lg:gap-8">
+          <div className="rounded-[28px] bg-white px-6 py-7 shadow-[0_16px_40px_rgba(15,23,42,0.06)] sm:px-8 sm:py-8">
+            <ul className="divide-y divide-slate-100">
+              {officeDetails.map((item) => (
+                <li key={item.label} className="flex items-start gap-4 py-5 first:pt-0 last:pb-0">
+                  <span className="mt-0.5 shrink-0 text-[#2cb673]">
+                    <DetailIcon type={item.icon} />
                   </span>
-                  <select
-                    required
-                    name="service"
-                    defaultValue=""
-                    className="h-11 w-full rounded-lg border border-slate-200 bg-white px-3 text-brand-navy outline-none transition focus:border-brand-green focus:ring-2 focus:ring-brand-green/20"
-                  >
-                    <option value="" disabled>
-                      Select service
-                    </option>
-                    {serviceOptions.map((option) => (
-                      <option key={option} value={option}>
-                        {option}
-                      </option>
-                    ))}
-                  </select>
-                </label>
-
-                <label className="block">
-                  <span className="mb-1.5 block text-sm font-medium text-slate-600">Message</span>
-                  <textarea
-                    required
-                    name="message"
-                    rows={4}
-                    placeholder="Tell us about your property or energy needs"
-                    className="w-full resize-y rounded-lg border border-slate-200 bg-white px-3 py-2.5 text-brand-navy outline-none transition focus:border-brand-green focus:ring-2 focus:ring-brand-green/20"
-                  />
-                </label>
-              </div>
-
-              <button
-                type="submit"
-                className="mt-5 inline-flex h-11 items-center gap-2 rounded-full bg-brand-green px-6 text-sm font-semibold text-white transition hover:bg-brand-green-dark"
-              >
-                Send Enquiry
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path
-                    d="M4 12L20 5L13 20L11 13L4 12Z"
-                    stroke="currentColor"
-                    strokeWidth="1.7"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
-
-              {submitted ? (
-                <p className="mt-3 text-sm font-medium text-brand-green">
-                  Thank you. Your enquiry has been noted. Our team will get back to you soon.
-                </p>
-              ) : null}
-            </form>
+                  <div>
+                    <p className="text-[11px] font-extrabold uppercase tracking-[0.14em] text-brand-blue">
+                      {item.label}
+                    </p>
+                    {"href" in item && item.href ? (
+                      <a
+                        href={item.href}
+                        className="mt-1 block text-[15px] font-bold leading-snug text-[#0A2540] transition hover:text-brand-green sm:text-base"
+                      >
+                        {item.value}
+                      </a>
+                    ) : (
+                      <p className="mt-1 text-[15px] font-bold leading-snug text-[#0A2540] sm:text-base">
+                        {item.value}
+                      </p>
+                    )}
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
+
+          <form
+            onSubmit={handleSubmit}
+            className="rounded-[28px] bg-white px-6 py-7 shadow-[0_16px_40px_rgba(15,23,42,0.06)] sm:px-8 sm:py-8"
+          >
+            <div className="grid gap-5 sm:grid-cols-2">
+              <label className="block">
+                <span className="mb-2 block text-sm font-extrabold text-[#0A2540]">Name</span>
+                <input
+                  required
+                  type="text"
+                  name="name"
+                  placeholder="Your name"
+                  className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-[15px] font-semibold text-brand-navy outline-none transition placeholder:font-medium placeholder:text-slate-400 focus:border-brand-green focus:ring-2 focus:ring-brand-green/20"
+                />
+              </label>
+              <label className="block">
+                <span className="mb-2 block text-sm font-extrabold text-[#0A2540]">Phone</span>
+                <input
+                  required
+                  type="tel"
+                  name="phone"
+                  placeholder="Phone number"
+                  className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-[15px] font-semibold text-brand-navy outline-none transition placeholder:font-medium placeholder:text-slate-400 focus:border-brand-green focus:ring-2 focus:ring-brand-green/20"
+                />
+              </label>
+              <label className="block">
+                <span className="mb-2 block text-sm font-extrabold text-[#0A2540]">Email</span>
+                <input
+                  required
+                  type="email"
+                  name="email"
+                  placeholder="Email address"
+                  className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-[15px] font-semibold text-brand-navy outline-none transition placeholder:font-medium placeholder:text-slate-400 focus:border-brand-green focus:ring-2 focus:ring-brand-green/20"
+                />
+              </label>
+              <label className="block">
+                <span className="mb-2 block text-sm font-extrabold text-[#0A2540]">
+                  Service Required
+                </span>
+                <select
+                  required
+                  name="service"
+                  defaultValue=""
+                  className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-[15px] font-semibold text-brand-navy outline-none transition focus:border-brand-green focus:ring-2 focus:ring-brand-green/20"
+                >
+                  <option value="" disabled>
+                    Select service
+                  </option>
+                  {serviceOptions.map((option) => (
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <label className="block sm:col-span-2">
+                <span className="mb-2 block text-sm font-extrabold text-[#0A2540]">Message</span>
+                <textarea
+                  required
+                  name="message"
+                  rows={5}
+                  placeholder="Tell us about your property or energy needs"
+                  className="w-full resize-y rounded-2xl border border-slate-200 bg-white px-4 py-3 text-[15px] font-semibold text-brand-navy outline-none transition placeholder:font-medium placeholder:text-slate-400 focus:border-brand-green focus:ring-2 focus:ring-brand-green/20"
+                />
+              </label>
+            </div>
+
+            <button
+              type="submit"
+              className="mt-6 inline-flex h-12 items-center gap-2 rounded-full bg-brand-green px-7 text-sm font-extrabold text-white shadow-[0_10px_24px_rgba(45,189,110,0.28)] transition hover:bg-brand-green-dark"
+            >
+              Send Enquiry
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path
+                  d="M4 12L20 5L13 20L11 13L4 12Z"
+                  stroke="currentColor"
+                  strokeWidth="1.7"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+
+            {submitted ? (
+              <p className="mt-3 text-sm font-bold text-brand-green">
+                Thank you. Your enquiry has been noted. Our team will get back to you soon.
+              </p>
+            ) : null}
+          </form>
         </div>
       </section>
 
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-[900px] text-center">
-          <p className="text-xs font-bold tracking-[0.16em] text-brand-green">QUICK ACTIONS</p>
-          <h2 className="mt-3 font-display text-[clamp(1.5rem,2.8vw,2.1rem)] font-bold text-brand-navy">
+          <p className="text-xs font-extrabold tracking-[0.16em] text-brand-green">QUICK ACTIONS</p>
+          <h2 className="mt-3 font-display text-[clamp(1.5rem,2.8vw,2.1rem)] font-extrabold text-brand-navy">
             Reach the Right Support Channel
           </h2>
         </div>
 
-        <div className="mx-auto mt-10 grid max-w-[900px] grid-cols-2 gap-6 sm:grid-cols-4">
+        <div className="mx-auto mt-12 grid max-w-[980px] grid-cols-2 gap-8 sm:grid-cols-4 sm:gap-10">
           {quickActions.map((action) => (
             <a
               key={action.label}
               href={action.href}
               target={action.href.startsWith("http") ? "_blank" : undefined}
               rel={action.href.startsWith("http") ? "noopener noreferrer" : undefined}
-              className="group flex flex-col items-center gap-3 text-center"
+              className="group flex flex-col items-center gap-3.5 text-center"
             >
-              <span className="flex h-16 w-16 items-center justify-center rounded-full bg-[#e8f1fb] text-brand-blue transition group-hover:bg-brand-green/10 group-hover:text-brand-green">
-                <DetailIcon type={action.icon} />
+              <span
+                className="flex h-[84px] w-[84px] items-center justify-center rounded-full bg-[#eef3f8] text-[#1d4f91] shadow-[0_4px_10px_rgba(15,23,42,0.08)] transition-all duration-300 group-hover:-translate-y-1 group-hover:bg-brand-green group-hover:text-white group-hover:shadow-[0_8px_0_#1f9a55,0_18px_28px_rgba(45,189,110,0.38)] sm:h-[92px] sm:w-[92px]"
+              >
+                <span className="scale-[1.45]">
+                  <DetailIcon type={action.icon} />
+                </span>
               </span>
-              <span className="text-sm font-semibold text-brand-navy">{action.label}</span>
+              <span className="text-[15px] font-extrabold text-[#0A2540] transition-colors duration-300 group-hover:text-brand-green sm:text-base">
+                {action.label}
+              </span>
             </a>
           ))}
         </div>
@@ -345,8 +324,8 @@ export default function ContactDetailsSection() {
 
       <section className="bg-[#f7fafc] px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-[900px] text-center">
-          <p className="text-xs font-bold tracking-[0.16em] text-brand-green">FIND US</p>
-          <h2 className="mt-3 font-display text-[clamp(1.5rem,2.8vw,2.1rem)] font-bold text-brand-navy">
+          <p className="text-xs font-extrabold tracking-[0.16em] text-brand-green">FIND US</p>
+          <h2 className="mt-3 font-display text-[clamp(1.5rem,2.8vw,2.1rem)] font-extrabold text-brand-navy">
             Office Location
           </h2>
         </div>
@@ -356,15 +335,15 @@ export default function ContactDetailsSection() {
             <span className="flex h-11 w-11 items-center justify-center rounded-full bg-brand-green/10 text-brand-green">
               <DetailIcon type="pin" />
             </span>
-            <h3 className="mt-4 text-xl font-bold text-brand-navy">
+            <h3 className="mt-4 text-xl font-extrabold text-brand-navy">
               Samatha Green Energy Solutions Pvt Ltd
             </h3>
-            <p className="mt-1 text-sm text-slate-500">Solar Energy Company</p>
-            <p className="mt-4 text-sm leading-relaxed text-slate-600">
-              No #53, Kowdenahalli, Kalkere Main Rd, Bengaluru, Karnataka 560016
+            <p className="mt-1 text-sm font-bold text-slate-500">Solar Energy Company</p>
+            <p className="mt-4 text-sm font-semibold leading-relaxed text-slate-600">
+              No #53, Kowdenahalli, Kalkere Main Rd, K R Puram, Bengaluru, Karnataka 560016
             </p>
             <a
-              href="https://www.google.com/maps/search/?api=1&query=No+53+Kowdenahalli+Kalkere+Main+Rd+Bengaluru+Karnataka+560016"
+              href={officeMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-6 inline-flex h-11 w-fit items-center justify-center rounded-full bg-[#14559b] px-6 text-sm font-semibold text-white transition hover:bg-[#124a87]"
@@ -376,7 +355,7 @@ export default function ContactDetailsSection() {
           <div className="relative min-h-[280px] bg-slate-100 lg:min-h-[340px]">
             <iframe
               title="Samatha Green Energy Solutions office location"
-              src="https://maps.google.com/maps?q=No%2053%20Kowdenahalli%20Kalkere%20Main%20Rd%20Bengaluru%20Karnataka%20560016&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              src={officeMapsEmbedUrl}
               className="absolute inset-0 h-full w-full border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

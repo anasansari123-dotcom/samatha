@@ -139,12 +139,12 @@ export default function EnergyAssessmentSection() {
             energy usage and improve operational performance.
           </p>
 
-          <div className="relative mt-8 aspect-[16/10] overflow-hidden rounded-[18px] bg-slate-200 shadow-[0_12px_30px_rgba(10,77,141,0.1)]">
+          <div className="group relative mt-8 aspect-[16/10] overflow-hidden rounded-[18px] bg-slate-200 shadow-[0_12px_30px_rgba(10,77,141,0.1)] transition duration-500 ease-out hover:scale-[1.02] hover:shadow-[0_20px_44px_rgba(10,77,141,0.18)]">
             <Image
               src="/ser.jpg"
               alt="Technician reviewing energy assessment data on site"
               fill
-              className="object-cover"
+              className="object-cover transition duration-500 ease-out group-hover:scale-105"
               sizes="(max-width: 1024px) 100vw, 45vw"
             />
           </div>
@@ -154,7 +154,7 @@ export default function EnergyAssessmentSection() {
           {features.map((feature) => (
             <article
               key={feature.title}
-              className="flex min-h-[210px] flex-col rounded-[18px] border border-[#E6EDF4] bg-white px-5 py-6 shadow-[0_8px_24px_rgba(15,23,42,0.05)] sm:min-h-[200px] sm:px-6 sm:py-7"
+              className="flex min-h-[210px] flex-col rounded-[18px] border border-[#E6EDF4] bg-white px-5 py-6 shadow-[0_8px_24px_rgba(15,23,42,0.05)] transition duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(15,23,42,0.12)] sm:min-h-[200px] sm:px-6 sm:py-7"
             >
               <span className="text-[#2cb673]">
                 <FeatureIcon type={feature.icon} />

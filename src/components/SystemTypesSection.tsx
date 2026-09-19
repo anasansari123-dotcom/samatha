@@ -136,26 +136,40 @@ export default function SystemTypesSection({
         </div>
       </section>
 
-      <section className="bg-[#eef3f8] px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-        <div className="mx-auto max-w-[1100px] text-center">
-          <p className="text-xs font-bold tracking-[0.16em] text-brand-green">COMPARISON</p>
-          <h2 className="mt-3 font-display text-[clamp(1.6rem,3.2vw,2.25rem)] font-bold text-brand-navy">
+      <section className="bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+        <div className="mx-auto max-w-[820px] text-center">
+          <p className="text-[11px] font-extrabold tracking-[0.18em] text-brand-green">
+            COMPARISON
+          </p>
+          <h2 className="mt-3 font-display text-[clamp(1.7rem,3.2vw,2.35rem)] font-extrabold text-brand-navy">
             System Comparison Table
           </h2>
-          <p className="mx-auto mt-4 max-w-3xl text-[0.95rem] leading-relaxed text-slate-500">
-            Compare On Grid, Off Grid, and Hybrid solar systems across grid connection, backup,
+          <p className="mx-auto mt-4 max-w-[640px] text-[15px] leading-relaxed text-slate-500">
+            Compare On-Grid, Off-Grid, and Hybrid solar systems across grid connection, backup,
             outage support, surplus energy handling, and cost.
           </p>
         </div>
 
-        <div className="mx-auto mt-10 max-w-[1200px] overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-[0_10px_28px_rgba(15,23,42,0.05)]">
-          <table className="min-w-[760px] w-full border-collapse text-left text-sm">
+        <div className="mx-auto mt-10 max-w-[920px] overflow-x-auto rounded-[22px] border border-[#e6edf5] bg-white shadow-[0_10px_30px_rgba(15,23,42,0.06)]">
+          <table className="min-w-[720px] w-full border-collapse text-left">
+            <colgroup>
+              <col className="w-[30%]" />
+              <col className="w-[23.3%]" />
+              <col className="w-[23.3%]" />
+              <col className="w-[23.4%]" />
+            </colgroup>
             <thead>
-              <tr className="bg-brand-navy text-white">
-                <th className="px-5 py-4 font-semibold">Property</th>
-                <th className="px-5 py-4 font-semibold">On-Grid</th>
-                <th className="px-5 py-4 font-semibold">Off-Grid</th>
-                <th className="px-5 py-4 font-semibold">Hybrid</th>
+              <tr className="bg-brand-blue text-white">
+                <th className="px-6 py-[18px] text-[15px] font-bold">Property</th>
+                <th className="border-l border-white/20 px-6 py-[18px] text-[15px] font-bold">
+                  On-Grid
+                </th>
+                <th className="border-l border-white/20 px-6 py-[18px] text-[15px] font-bold">
+                  Off-Grid
+                </th>
+                <th className="border-l border-white/20 px-6 py-[18px] text-[15px] font-bold">
+                  Hybrid
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -164,10 +178,12 @@ export default function SystemTypesSection({
                   key={row.property}
                   className={index % 2 === 0 ? "bg-white" : "bg-[#f4f8fc]"}
                 >
-                  <td className="px-5 py-4 font-semibold text-brand-navy">{row.property}</td>
-                  <td className="px-5 py-4 text-slate-600">{row.onGrid}</td>
-                  <td className="px-5 py-4 text-slate-600">{row.offGrid}</td>
-                  <td className="px-5 py-4 text-slate-600">{row.hybrid}</td>
+                  <td className="px-6 py-5 text-[15px] font-bold text-brand-navy">
+                    {row.property}
+                  </td>
+                  <td className="px-6 py-5 text-[14px] font-medium text-slate-500">{row.onGrid}</td>
+                  <td className="px-6 py-5 text-[14px] font-medium text-slate-500">{row.offGrid}</td>
+                  <td className="px-6 py-5 text-[14px] font-medium text-slate-500">{row.hybrid}</td>
                 </tr>
               ))}
             </tbody>

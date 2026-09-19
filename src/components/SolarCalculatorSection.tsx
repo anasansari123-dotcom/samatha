@@ -2,28 +2,35 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import { useQuoteModal } from "@/components/QuoteModal";
 
 const propertyOptions = [
   {
     id: "home",
-    label: "reneμX Home",
+    label: "reneμ Home",
     description: "Rooftop solar for residences",
     href: "/products/samatha-home#renemu-home",
     icon: HomeIcon,
+    sizeDivisor: 120,
+    savingsRate: 0.78,
   },
   {
     id: "elite",
-    label: "reneμX Elite",
+    label: "reneμ Elite",
     description: "Premium systems with higher savings",
     href: "/products/samatha-elite#renemu-elite",
     icon: ShieldIcon,
+    sizeDivisor: 108,
+    savingsRate: 0.85,
   },
   {
     id: "plus",
-    label: "reneμX Plus",
+    label: "reneμ Plus",
     description: "Commercial & industrial setups",
     href: "/products/samatha-plus#renemu-plus",
     icon: WrenchIcon,
+    sizeDivisor: 95,
+    savingsRate: 0.81,
   },
 ] as const;
 
@@ -97,23 +104,25 @@ function formatCurrency(value: number) {
 }
 
 export default function SolarCalculatorSection() {
+  const { openQuote } = useQuoteModal();
   const [bill, setBill] = useState("6000");
   const [tariff, setTariff] = useState("8.8");
   const [selectedNeed, setSelectedNeed] = useState<(typeof propertyOptions)[number]["id"]>("home");
+  const selectedProduct = propertyOptions.find((item) => item.id === selectedNeed) ?? propertyOptions[0];
 
   const estimate = useMemo(() => {
     const monthlyBill = Math.max(0, Number(bill) || 0);
     const rate = Math.max(0.1, Number(tariff) || 0.1);
     const monthlyUnits = monthlyBill / rate;
-    const estimatedSize = monthlyUnits / 120;
-    const yearlySavings = monthlyBill * 12 * 0.78;
+    const estimatedSize = monthlyUnits / selectedProduct.sizeDivisor;
+    const yearlySavings = monthlyBill * 12 * selectedProduct.savingsRate;
 
     return {
       size: estimatedSize,
       units: monthlyUnits,
       savings: yearlySavings,
     };
-  }, [bill, tariff]);
+  }, [bill, tariff, selectedProduct]);
 
   return (
     <section id="products" className="bg-white">
@@ -189,20 +198,20 @@ export default function SolarCalculatorSection() {
                 </label>
               </div>
 
-              <div className="mt-6 grid gap-3 sm:grid-cols-3 sm:gap-4">
-                <div className="rounded-2xl bg-[#edf2f7] px-4 py-5 text-left sm:px-5">
+              <div key={selectedProduct.id} className="mt-6 grid gap-3 sm:grid-cols-3 sm:gap-4">
+                <div className="rounded-2xl bg-[#edf2f7] px-4 py-5 text-left transition-all duration-300 ease-out sm:px-5">
                   <p className="text-sm font-semibold text-slate-500">Estimated size</p>
                   <p className="mt-2 text-2xl font-bold tracking-tight text-brand-navy sm:text-[1.65rem]">
                     {estimate.size.toFixed(1)} kW
                   </p>
                 </div>
-                <div className="rounded-2xl bg-[#edf2f7] px-4 py-5 text-left sm:px-5">
+                <div className="rounded-2xl bg-[#edf2f7] px-4 py-5 text-left transition-all duration-300 ease-out sm:px-5">
                   <p className="text-sm font-semibold text-slate-500">Monthly units</p>
                   <p className="mt-2 text-2xl font-bold tracking-tight text-brand-navy sm:text-[1.65rem]">
                     {Math.round(estimate.units).toLocaleString("en-IN")}
                   </p>
                 </div>
-                <div className="rounded-2xl bg-brand-green px-4 py-5 text-left text-white shadow-[0_10px_24px_rgba(45,189,110,0.28)] sm:px-5">
+                <div className="rounded-2xl bg-brand-green px-4 py-5 text-left text-white shadow-[0_10px_24px_rgba(45,189,110,0.28)] transition-all duration-300 ease-out sm:px-5">
                   <p className="text-sm font-semibold text-white/90">Yearly savings</p>
                   <p className="mt-2 text-2xl font-bold tracking-tight sm:text-[1.65rem]">
                     {formatCurrency(Math.round(estimate.savings))}
@@ -235,21 +244,21 @@ export default function SolarCalculatorSection() {
                 const Icon = option.icon;
                 const active = selectedNeed === option.id;
                 return (
-                  <Link
+                  <button
                     key={option.id}
                     id={`products-${option.id}`}
-                    href={option.href}
+                    type="button"
                     onClick={() => setSelectedNeed(option.id)}
-                    className={`group flex scroll-mt-28 items-center gap-4 rounded-xl border px-4 py-4 text-left transition hover:-translate-y-0.5 ${
+                    className={`group flex scroll-mt-28 items-center gap-4 rounded-xl border px-4 py-4 text-left transition-all duration-300 ease-out ${
                       active
-                        ? "border-brand-green bg-brand-green/5 shadow-[0_0_0_1px_rgba(45,189,110,0.15)]"
-                        : "border-slate-200 bg-white hover:border-brand-green/50 hover:bg-slate-50 hover:shadow-[0_10px_24px_rgba(15,23,42,0.06)]"
+                        ? "border-brand-green bg-brand-green/5 shadow-[0_12px_28px_rgba(45,189,110,0.16)]"
+                        : "border-slate-200 bg-white hover:-translate-y-0.5 hover:border-brand-green/50 hover:bg-slate-50 hover:shadow-[0_10px_24px_rgba(15,23,42,0.06)]"
                     }`}
                   >
                     <span
-                      className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-full transition ${
+                      className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-full transition-all duration-300 ease-out ${
                         active
-                          ? "bg-brand-green text-white"
+                          ? "scale-105 bg-brand-green text-white shadow-[0_8px_18px_rgba(45,189,110,0.28)]"
                           : "bg-brand-green/10 text-brand-green group-hover:bg-brand-green group-hover:text-white"
                       }`}
                     >
@@ -263,9 +272,25 @@ export default function SolarCalculatorSection() {
                         {option.description}
                       </span>
                     </span>
-                  </Link>
+                  </button>
                 );
               })}
+            </div>
+
+            <div className="mt-5 flex flex-wrap gap-3">
+              <button
+                type="button"
+                onClick={() => openQuote(selectedProduct.label)}
+                className="inline-flex h-11 items-center justify-center rounded-full bg-brand-green px-5 text-sm font-semibold text-white shadow-[0_8px_18px_rgba(45,189,110,0.28)] transition-all duration-300 hover:bg-brand-green-dark"
+              >
+                Get {selectedProduct.label} Quote
+              </button>
+              <Link
+                href={selectedProduct.href}
+                className="inline-flex h-11 items-center justify-center rounded-full border border-slate-200 px-5 text-sm font-semibold text-brand-navy transition-all duration-300 hover:border-brand-green hover:text-brand-green"
+              >
+                View {selectedProduct.label}
+              </Link>
             </div>
           </div>
         </div>

@@ -305,8 +305,14 @@ function CheckIcon() {
 
 function ServiceImage({ src, alt }: { src: string; alt: string }) {
   return (
-    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-slate-100 sm:aspect-[5/4] lg:min-h-[320px] lg:aspect-auto lg:h-full lg:min-h-[360px]">
-      <Image src={src} alt={alt} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 540px" />
+    <div className="group relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-slate-100 shadow-[0_8px_24px_rgba(15,23,42,0.06)] transition duration-500 ease-out hover:scale-[1.02] hover:shadow-[0_18px_40px_rgba(15,23,42,0.14)] sm:aspect-[5/4] lg:min-h-[320px] lg:aspect-auto lg:h-full lg:min-h-[360px]">
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        className="object-cover transition duration-500 ease-out group-hover:scale-105"
+        sizes="(max-width: 1024px) 100vw, 540px"
+      />
     </div>
   );
 }
@@ -317,15 +323,18 @@ function ServiceContent({
   service: (typeof services)[number];
 }) {
   return (
-    <div className="flex flex-col justify-center">
+    <div className="flex h-full flex-col justify-center rounded-2xl p-3 transition duration-500 ease-out hover:-translate-y-2 hover:shadow-[0_18px_42px_rgba(15,23,42,0.12)] sm:p-5">
       <p className="text-xs font-bold tracking-[0.14em] text-[#2cb673]">{service.label}</p>
-      <h3 className="mt-2 font-display text-[clamp(1.35rem,2.2vw,1.85rem)] font-extrabold leading-snug text-[#0A2540]">
+      <h3 className="mt-2 font-display text-[clamp(1.35rem,2.2vw,1.85rem)] font-extrabold leading-snug text-[#0A2540] transition-colors duration-300 hover:text-[#2cb673]">
         {service.title}
       </h3>
       <p className="mt-3 text-[0.95rem] leading-7 text-[#4A5568] sm:text-base">{service.description}</p>
       <ul className="mt-5 space-y-3">
         {service.points.map((point) => (
-          <li key={point} className="flex items-start gap-3 text-sm leading-relaxed text-[#334155] sm:text-[15px]">
+          <li
+            key={point}
+            className="flex items-start gap-3 rounded-lg px-1 py-0.5 text-sm leading-relaxed text-[#334155] transition duration-300 hover:translate-x-1 hover:text-[#0A2540] sm:text-[15px]"
+          >
             <CheckIcon />
             <span>{point}</span>
           </li>

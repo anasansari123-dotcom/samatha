@@ -202,14 +202,16 @@ export default function ProcessSection() {
           </p>
         </div>
 
-        <div className="relative mx-auto mt-8 w-full max-w-[820px] px-2 sm:mt-10">
+        <div className="relative mx-auto mt-8 w-full max-w-[1280px] px-1 sm:mt-10 sm:px-2">
           <Image
             src="/process-infinity.png"
             alt="Our process: Solar Energy Assessment, System Design, Installation, Monitoring and Support"
-            width={1600}
-            height={940}
-            className="mx-auto h-auto w-full"
-            sizes="(max-width: 820px) 100vw, 820px"
+            width={2000}
+            height={1270}
+            quality={100}
+            unoptimized
+            className="mx-auto h-auto w-full [image-rendering:-webkit-optimize-contrast]"
+            sizes="(max-width: 1280px) 100vw, 1280px"
             priority
           />
         </div>

@@ -5,11 +5,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { useQuoteModal } from "@/components/QuoteModal";
+import SearchOverlay from "@/components/SearchOverlay";
 
 const productItems = [
-  { label: "reneμX Home", href: "/products/samatha-home#renemu-home" },
-  { label: "reneμX Elite", href: "/products/samatha-elite#renemu-elite" },
-  { label: "reneμX Plus", href: "/products/samatha-plus#renemu-plus" },
+  { label: "reneμ Home", href: "/products/samatha-home#renemu-home" },
+  { label: "reneμ Elite", href: "/products/samatha-elite#renemu-elite" },
+  { label: "reneμ Plus", href: "/products/samatha-plus#renemu-plus" },
 ];
 
 const solutionItems = [
@@ -95,6 +96,7 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileOpenDropdown, setMobileOpenDropdown] = useState<string | null>(null);
+  const [searchOpen, setSearchOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
   const isHome = pathname === "/";
   const isProductsSection = pathname.startsWith("/products/");
@@ -124,6 +126,7 @@ export default function Header() {
   }, []);
 
   return (
+    <>
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white shadow-[0_1px_0_rgba(15,23,42,0.04)]">
       <div className="mx-auto flex h-[92px] w-full max-w-[1440px] items-center gap-4 px-4 sm:px-6 lg:px-8 xl:px-10">
         <div className="flex min-w-0 flex-1 items-center justify-start">
@@ -231,6 +234,7 @@ export default function Header() {
             <button
               type="button"
               aria-label="Search"
+              onClick={() => setSearchOpen(true)}
               className="flex h-10 w-10 items-center justify-center rounded-full bg-[#eef3f8] text-brand-blue transition hover:bg-[#e2ebf4]"
             >
               <SearchIcon />
@@ -251,6 +255,14 @@ export default function Header() {
             </button>
           </div>
 
+          <button
+            type="button"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-700 lg:hidden"
+            aria-label="Search"
+            onClick={() => setSearchOpen(true)}
+          >
+            <SearchIcon />
+          </button>
           <button
             type="button"
             className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-700 lg:hidden"
@@ -367,5 +379,7 @@ export default function Header() {
         </div>
       ) : null}
     </header>
+    <SearchOverlay open={searchOpen} onClose={() => setSearchOpen(false)} />
+    </>
   );
 }

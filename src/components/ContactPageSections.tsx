@@ -20,25 +20,21 @@ const helpCards = [
 
 function HelpIcon({ type }: { type: (typeof helpCards)[number]["icon"] }) {
   const common = {
-    width: 22,
-    height: 22,
+    width: 30,
+    height: 30,
     viewBox: "0 0 24 24",
     fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 1.8,
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
     "aria-hidden": true as const,
   };
 
   if (type === "headset") {
     return (
       <svg {...common}>
-        <path
-          d="M5 15V11A7 7 0 0 1 19 11V15"
-          stroke="currentColor"
-          strokeWidth="1.7"
-          strokeLinecap="round"
-        />
-        <rect x="3.5" y="13" width="4" height="6" rx="1.5" stroke="currentColor" strokeWidth="1.7" />
-        <rect x="16.5" y="13" width="4" height="6" rx="1.5" stroke="currentColor" strokeWidth="1.7" />
-        <path d="M19 18H15.5A2.5 2.5 0 0 1 13 15.5V14" stroke="currentColor" strokeWidth="1.7" />
+        <path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
       </svg>
     );
   }
@@ -46,21 +42,19 @@ function HelpIcon({ type }: { type: (typeof helpCards)[number]["icon"] }) {
   if (type === "calendar") {
     return (
       <svg {...common}>
-        <rect x="3.5" y="5" width="17" height="15" rx="2" stroke="currentColor" strokeWidth="1.7" />
-        <path
-          d="M8 3.5V7M16 3.5V7M3.5 10H20.5"
-          stroke="currentColor"
-          strokeWidth="1.7"
-          strokeLinecap="round"
-        />
+        <path d="M8 2v4" />
+        <path d="M16 2v4" />
+        <rect width="18" height="18" x="3" y="4" rx="2" />
+        <path d="M3 10h18" />
+        <path d="m9 16 2 2 4-4" />
       </svg>
     );
   }
 
   return (
     <svg {...common}>
-      <rect x="7" y="3" width="10" height="18" rx="2" stroke="currentColor" strokeWidth="1.7" />
-      <path d="M10 17H14" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+      <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
+      <path d="M12 18h.01" />
     </svg>
   );
 }
@@ -100,11 +94,11 @@ export default function ContactHelpSection() {
   return (
     <section id="quote" className="bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
       <div className="mx-auto max-w-[1100px] text-center">
-        <p className="text-xs font-bold tracking-[0.16em] text-brand-green">CONTACT SERVICES</p>
-        <h2 className="mt-3 font-display text-[clamp(1.55rem,3.2vw,2.2rem)] font-bold text-brand-navy">
+        <p className="text-xs font-extrabold tracking-[0.16em] text-brand-green">CONTACT SERVICES</p>
+        <h2 className="mt-3 font-display text-[clamp(1.55rem,3.2vw,2.2rem)] font-extrabold text-brand-navy">
           How Our Team Can Help
         </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-[0.95rem] leading-relaxed text-slate-500">
+        <p className="mx-auto mt-4 max-w-2xl text-[0.95rem] font-semibold leading-relaxed text-slate-500">
           Choose the right contact path for consultation, site planning, service support, AMC,
           monitoring, repairs, or upgrades.
         </p>
@@ -114,13 +108,13 @@ export default function ContactHelpSection() {
         {helpCards.map((card) => (
           <article
             key={card.title}
-            className="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_8px_24px_rgba(15,23,42,0.03)] sm:p-7"
+            className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_8px_24px_rgba(15,23,42,0.03)] transition duration-300 ease-out hover:-translate-y-1 hover:border-brand-green/35 hover:shadow-[0_16px_36px_rgba(15,23,42,0.1)] sm:p-7"
           >
-            <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-green/10 text-brand-green">
+            <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-green/10 text-brand-green transition duration-300 group-hover:bg-brand-green group-hover:text-white">
               <HelpIcon type={card.icon} />
             </span>
-            <h3 className="mt-5 text-lg font-bold text-brand-navy">{card.title}</h3>
-            <p className="mt-3 text-sm leading-relaxed text-slate-500">{card.text}</p>
+            <h3 className="mt-5 text-lg font-extrabold text-brand-navy">{card.title}</h3>
+            <p className="mt-3 text-sm font-semibold leading-relaxed text-slate-500">{card.text}</p>
           </article>
         ))}
       </div>

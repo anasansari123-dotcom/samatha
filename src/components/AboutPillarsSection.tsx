@@ -93,10 +93,14 @@ const expertiseColumns = [
 
 function PillarIcon({ type }: { type: (typeof pillars)[number]["icon"] }) {
   const common = {
-    width: 26,
-    height: 26,
+    width: 28,
+    height: 28,
     viewBox: "0 0 24 24",
     fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 1.8,
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
     "aria-hidden": true as const,
   };
 
@@ -104,57 +108,37 @@ function PillarIcon({ type }: { type: (typeof pillars)[number]["icon"] }) {
     case "innovation":
       return (
         <svg {...common}>
-          <path
-            d="M9 18H15M10 21H14M12 3A5 5 0 0 1 17 8C17 10.5 15.5 11.8 14.5 13H9.5C8.5 11.8 7 10.5 7 8A5 5 0 0 1 12 3Z"
-            stroke="currentColor"
-            strokeWidth="1.7"
-            strokeLinejoin="round"
-          />
+          <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5" />
+          <path d="M9 18h6" />
+          <path d="M10 22h4" />
         </svg>
       );
     case "sustainability":
       return (
         <svg {...common}>
-          <path
-            d="M5 19C8 12 14 9 19 5C15 10 14 15 12 19C10 16 7 15 5 19Z"
-            stroke="currentColor"
-            strokeWidth="1.7"
-            strokeLinejoin="round"
-          />
-          <path d="M12 19C11 14 9 11 6 9" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+          <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
+          <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
         </svg>
       );
     case "reliability":
       return (
         <svg {...common}>
-          <path
-            d="M12 3L19 6.5V11.5C19 16 15.8 19.5 12 20.5C8.2 19.5 5 16 5 11.5V6.5L12 3Z"
-            stroke="currentColor"
-            strokeWidth="1.7"
-          />
-          <path d="M8 13L11 10L13 12L16 9" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+          <path d="m9 12 2 2 4-4" />
         </svg>
       );
     case "savings":
       return (
         <svg {...common}>
-          <rect x="4" y="7" width="16" height="11" rx="5.5" stroke="currentColor" strokeWidth="1.7" />
-          <circle cx="12" cy="12.5" r="2" stroke="currentColor" strokeWidth="1.5" />
-          <path d="M7 12.5H8M16 12.5H17" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+          <path d="M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.5-11-.3-11 5 0 1.8 0 3 2 4.5V20h4v-2h3v2h4v-4c1-.5 1.7-1 2-2h2v-4h-2c0-1-.5-1.5-1-2V5z" />
+          <path d="M2 9v1c0 1.1.9 2 2 2h1" />
+          <path d="M16 11h.01" />
         </svg>
       );
     case "customer":
       return (
         <svg {...common}>
-          <path
-            d="M5 15V11A7 7 0 0 1 19 11V15"
-            stroke="currentColor"
-            strokeWidth="1.7"
-            strokeLinecap="round"
-          />
-          <rect x="3.5" y="13" width="4" height="6" rx="1.5" stroke="currentColor" strokeWidth="1.7" />
-          <rect x="16.5" y="13" width="4" height="6" rx="1.5" stroke="currentColor" strokeWidth="1.7" />
-          <path d="M19 18H15.5A2.5 2.5 0 0 1 13 15.5V14" stroke="currentColor" strokeWidth="1.7" />
+          <path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
         </svg>
       );
   }
@@ -225,9 +209,9 @@ export default function AboutPillarsSection() {
           <h2 className="mt-3 font-display text-[clamp(1.55rem,3vw,2.2rem)] font-bold text-brand-navy">
             The Principles Behind Our Clean Energy Ecosystem
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-[0.95rem] leading-relaxed text-slate-500">
-            Our work is guided by innovation, sustainability, reliability, savings, and a
-            customer-first approach across every project.
+          <p className="mx-auto mt-4 max-w-3xl text-[0.95rem] leading-relaxed text-slate-500">
+            Our work is guided by innovation, sustainability, reliability, savings, and customer
+            centricity across every solution we design, build, and support.
           </p>
         </div>
 
@@ -235,12 +219,14 @@ export default function AboutPillarsSection() {
           {pillars.map((pillar) => (
             <article
               key={pillar.title}
-              className="rounded-2xl border border-slate-200 bg-white p-5 text-center shadow-[0_8px_22px_rgba(15,23,42,0.04)]"
+              className="rounded-2xl border border-slate-200 bg-white p-5 text-left"
             >
-              <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-brand-green/10 text-brand-green">
+              <span className="text-brand-green">
                 <PillarIcon type={pillar.icon} />
               </span>
-              <h3 className="mt-4 text-base font-bold text-brand-navy">{pillar.title}</h3>
+              <h3 className="mt-4 text-base font-extrabold leading-snug text-brand-navy">
+                {pillar.title}
+              </h3>
               <p className="mt-2 text-sm leading-relaxed text-slate-500">{pillar.text}</p>
             </article>
           ))}

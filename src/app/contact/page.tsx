@@ -1,5 +1,6 @@
 import ContactDetailsSection from "@/components/ContactDetailsSection";
 import ContactHelpSection, { ContactHero } from "@/components/ContactPageSections";
+import CtaBanner from "@/components/CtaBanner";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import type { Metadata } from "next";
@@ -19,6 +20,10 @@ export default function ContactPage() {
         <ContactHelpSection />
         <ContactDetailsSection />
       </main>
+      <CtaBanner
+        title="Need Solar Consultation or Service Support?"
+        description="Contact us for installation, AMC, monitoring, repairs, upgrades, or a customized renewable energy solution."
+      />
       <Footer />
     </div>
   );
