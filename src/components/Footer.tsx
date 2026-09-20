@@ -111,7 +111,7 @@ export default function Footer({ showCta = false }: { showCta?: boolean }) {
                 alt="Samatha Green Energy Solutions"
                 width={360}
                 height={112}
-                className="absolute left-1/2 top-1/2 h-auto w-[105%] max-w-none -translate-x-1/2 -translate-y-1/2 object-contain"
+                className="absolute left-32 top-1/2 h-auto w-[105%] max-w-none -translate-x-1/2 -translate-y-1/2 object-contain"
               />
             </Link>
             <p className="max-w-sm text-base font-medium leading-7 text-white/72">
