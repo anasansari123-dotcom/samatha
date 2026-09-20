@@ -12,11 +12,11 @@ export default function ProjectsGallery() {
     <>
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-[1100px] text-center">
-          <p className="text-xs font-bold tracking-[0.16em] text-brand-green">PROJECT GALLERY</p>
+          <p className="text-[14px] font-extrabold tracking-[0.16em] text-brand-green">PROJECT GALLERY</p>
           <h2 className="mt-3 font-display text-[clamp(1.55rem,3.2vw,2.2rem)] font-extrabold text-brand-navy">
             Residential, Commercial, and Industrial Solar Work
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-[0.95rem] leading-relaxed text-slate-500">
+          <p className="mx-auto mt-4 max-w-2xl text-[19px] font-medium leading-relaxed text-slate-500">
             Open any project card to view specifications, images, and installation details.
           </p>
         </div>

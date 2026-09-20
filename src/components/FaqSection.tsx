@@ -11,7 +11,7 @@ const faqs = [
   {
     question: "How long does a typical rooftop solar installation take?",
     answer:
-      "Most residential rooftop projects are completed within 3–7 days after design approval and material readiness. Commercial timelines vary based on system size, structure readiness, and statutory clearances.",
+      "Most residential rooftop projects are completed within 3â€“7 days after design approval and material readiness. Commercial timelines vary based on system size, structure readiness, and statutory clearances.",
   },
   {
     question: "Will solar work during power cuts?",
@@ -83,12 +83,12 @@ export default function FaqSection() {
     <section id="faq" className="bg-[#eef3f8] px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
       <div className="mx-auto grid max-w-[1280px] gap-10 lg:grid-cols-[0.9fr_1.3fr] lg:gap-14">
         <div className="lg:pt-2">
-          <p className="text-xs font-bold tracking-[0.16em] text-brand-green">FAQ</p>
+          <p className="text-[14px] font-extrabold tracking-[0.16em] text-brand-green">FAQ</p>
           <h2 className="mt-3 max-w-md font-display text-[clamp(1.55rem,3vw,2.2rem)] font-bold leading-tight text-brand-navy">
             Common Questions About Solar Installation
           </h2>
-          <p className="mt-4 max-w-md text-[0.95rem] leading-relaxed text-slate-500">
-            Quick answers about rooftop solar, system types, savings, maintenance, and what to
+          <p className="mt-4 max-w-md text-[16px] leading-relaxed text-gray-500">
+            Find Quick answers about rooftop solar, system types, savings, maintenance, and what to
             expect when you work with Samatha.
           </p>
         </div>
@@ -107,14 +107,14 @@ export default function FaqSection() {
                   aria-expanded={open}
                   onClick={() => setOpenIndex(open ? -1 : index)}
                 >
-                  <span className="text-[0.98rem] font-semibold text-brand-navy">
+                  <span className="text-[1.08rem] font-bold text-brand-navy">
                     {faq.question}
                   </span>
                   <Chevron open={open} />
                 </button>
                 {open ? (
                   <div className="border-t border-slate-100 px-5 pb-4 pt-3">
-                    <p className="text-sm leading-relaxed text-slate-500">{faq.answer}</p>
+                    <p className="text-[16px] leading-relaxed text-gray-500">{faq.answer}</p>
                   </div>
                 ) : null}
               </div>

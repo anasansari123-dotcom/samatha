@@ -30,46 +30,46 @@ export default function AdvancedSolutionsSection({
     <>
       <section className="bg-[#eef3f8] px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-[1000px] text-center">
-          <p className="text-xs font-bold tracking-[0.16em] text-brand-green">ADVANCED SOLUTIONS</p>
-          <h2 className="mt-3 font-display text-[clamp(1.4rem,3vw,2.05rem)] font-bold leading-tight text-brand-navy">
+          <p className="text-[14px] font-extrabold tracking-[0.16em] text-brand-green">ADVANCED SOLUTIONS</p>
+          <h2 className="page-title mt-3 font-display font-bold leading-tight text-brand-navy">
             Energy Storage and Round the Clock Renewable Energy (RTC) (Solar + wind +
             BESS/Lithium-ion Battery) Solutions
           </h2>
-          <p className="mx-auto mt-4 max-w-3xl text-[0.95rem] leading-relaxed text-slate-500">
+          <p className="page-desc mx-auto mt-4 max-w-3xl">
             For customers who need stronger backup, smarter energy control, and continuous
             renewable power, we design advanced storage and round-the-clock systems.
           </p>
         </div>
 
-        <div className="mx-auto mt-10 grid max-w-[1100px] gap-6 lg:grid-cols-2">
+        <div className="mx-auto mt-10 grid max-w-[1180px] items-stretch gap-5 lg:grid-cols-2">
           {advancedCards.map((card) => {
             const active = activeSolution === card.id;
             return (
               <article
                 key={card.id}
                 id={card.id}
-                className={`scroll-mt-28 rounded-2xl border bg-white p-6 text-center shadow-[0_10px_28px_rgba(15,23,42,0.05)] sm:p-8 ${
-                  active
-                    ? "border-brand-green/50 ring-1 ring-brand-green/20"
-                    : "border-slate-200"
+                className={`flex h-full scroll-mt-28 flex-col rounded-[20px] border bg-[#F4F8FB] p-4 text-left sm:p-5 ${
+                  active ? "border-brand-green/45 ring-1 ring-brand-green/20" : "border-[#E6EDF4]"
                 }`}
               >
-                <div className="relative mx-auto h-[230px] w-full max-w-[260px]">
-                  <Image
-                    src={card.image}
-                    alt={card.title}
-                    fill
-                    className="object-contain"
-                    sizes="260px"
-                  />
-                </div>
-                <h3 className="mt-2 text-xl font-bold leading-snug text-brand-navy">{card.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate-500">{card.description}</p>
-                <Link
-                  href={card.href}
-                  className="mt-5 inline-flex text-sm font-semibold text-brand-green hover:text-brand-green-dark"
-                >
-                  Learn more →
+                <Link href={card.href} className="flex h-full flex-col no-underline">
+                  <div className="rounded-[16px] bg-white px-4 py-8">
+                    <div className="relative mx-auto h-[170px] w-full max-w-[200px]">
+                      <Image
+                        src={card.image}
+                        alt=""
+                        fill
+                        className="object-contain"
+                        sizes="200px"
+                      />
+                    </div>
+                  </div>
+                  <h3 className="page-card-title mt-5 px-2 font-extrabold text-[#0B2545]">
+                    {card.title}
+                  </h3>
+                  <p className="page-desc mt-3 px-2">
+                    {card.description}
+                  </p>
                 </Link>
               </article>
             );

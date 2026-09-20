@@ -175,15 +175,15 @@ function ColumnIcon({ type }: { type: (typeof expertiseColumns)[number]["icon"] 
 
   if (type === "clipboard") {
     return (
-      <svg {...common}>
-        <rect x="6" y="5" width="12" height="15" rx="2" stroke="currentColor" strokeWidth="1.7" />
-        <path d="M9 5H15V7.2H9V5Z" stroke="currentColor" strokeWidth="1.7" />
-        <path
-          d="M9 11H15M9 14.2H15M9 17.4H13"
-          stroke="currentColor"
-          strokeWidth="1.7"
-          strokeLinecap="round"
-        />
+      <svg
+        {...common}
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <rect width="8" height="4" x="8" y="2" rx="1" ry="1" />
+        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
       </svg>
     );
   }
@@ -205,11 +205,11 @@ export default function AboutPillarsSection() {
     <>
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-[1100px] text-center">
-          <p className="text-xs font-bold tracking-[0.16em] text-brand-green">CORE PILLARS</p>
-          <h2 className="mt-3 font-display text-[clamp(1.55rem,3vw,2.2rem)] font-bold text-brand-navy">
+          <p className="text-[14px] font-extrabold tracking-[0.16em] text-brand-green">CORE PILLARS</p>
+          <h2 className="page-title mt-3 font-display font-bold text-brand-navy">
             The Principles Behind Our Clean Energy Ecosystem
           </h2>
-          <p className="mx-auto mt-4 max-w-3xl text-[0.95rem] leading-relaxed text-slate-500">
+          <p className="page-desc mx-auto mt-4 max-w-3xl">
             Our work is guided by innovation, sustainability, reliability, savings, and customer
             centricity across every solution we design, build, and support.
           </p>
@@ -224,10 +224,10 @@ export default function AboutPillarsSection() {
               <span className="text-brand-green">
                 <PillarIcon type={pillar.icon} />
               </span>
-              <h3 className="mt-4 text-base font-extrabold leading-snug text-brand-navy">
+              <h3 className="page-sub-title mt-4 font-extrabold text-brand-navy">
                 {pillar.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-500">{pillar.text}</p>
+              <p className="page-desc mt-2">{pillar.text}</p>
             </article>
           ))}
         </div>
@@ -235,15 +235,15 @@ export default function AboutPillarsSection() {
 
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-[1100px] text-center">
-          <p className="text-xs font-bold tracking-[0.12em] text-[#2cb673]">
+          <p className="text-[14px] font-extrabold tracking-[0.12em] text-[#2cb673]">
             QUALIFICATIONS, EXPERTISE, COMPLIANCES AND CERTIFICATIONS
           </p>
-          <h2 className="mt-3 font-display text-[clamp(1.55rem,3vw,2.2rem)] font-bold text-[#0A2540]">
+          <h2 className="page-title mt-3 font-display font-bold text-[#0A2540]">
             Expertise and Capabilities
           </h2>
-          <p className="mx-auto mt-4 max-w-3xl text-[0.95rem] leading-relaxed text-[#64748B]">
+          <p className="page-desc mx-auto mt-4 max-w-3xl">
             From certified project teams to advanced design, quality assurance, and long-term
-            support — Samatha delivers end-to-end renewable energy capability.
+            support â€” Samatha delivers end-to-end renewable energy capability.
           </p>
         </div>
 
@@ -257,17 +257,17 @@ export default function AboutPillarsSection() {
                 <span className="mt-0.5 shrink-0 text-[#2cb673]">
                   <ColumnIcon type={column.icon} />
                 </span>
-                <h3 className="text-[1.15rem] font-extrabold leading-snug text-[#0A2540] sm:text-[1.22rem]">
+                <h3 className="page-sub-title font-extrabold text-[#0A2540]">
                   {column.title}
                 </h3>
               </div>
               <div className="mt-6 flex flex-1 flex-col gap-5">
                 {column.items.map((item) => (
                   <div key={item.heading}>
-                    <h4 className="text-[15px] font-bold leading-snug text-[#1B4F8A]">
+                    <h4 className="text-base font-bold leading-snug !text-[#0D529C]">
                       {item.heading}
                     </h4>
-                    <p className="mt-1.5 text-[14px] leading-6 text-[#5B6B7C]">{item.text}</p>
+                    <p className="page-desc mt-1.5">{item.text}</p>
                   </div>
                 ))}
               </div>

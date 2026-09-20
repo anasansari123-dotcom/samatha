@@ -5,71 +5,40 @@ const posts = [
     category: "ENERGY PLANNING",
     title: "How to Choose the Right Renewable Energy System",
     excerpt:
-      "A practical guide to matching on-grid, hybrid, or storage-ready systems with your usage pattern and roof conditions.",
-    date: "May 2024",
-    icon: "plan",
+      "A practical look at matching solar, hybrid, BESS, and microgrid options to your site, energy usage, and backup requirements.",
+    date: "May 2026",
   },
   {
     category: "BATTERY STORAGE",
-    title: "Why Battery Storage Matters for Reliable Power",
+    title: "Why BESS Matters for Reliable Clean Power",
     excerpt:
-      "Learn how BESS and hybrid setups keep critical loads running during outages while improving energy independence.",
-    date: "May 2024",
-    icon: "battery",
+      "Battery Energy Storage Systems improve backup, peak load management, renewable energy utilization, and long-term energy reliability.",
+    date: "May 2026",
   },
   {
     category: "SOLAR SOLUTIONS",
-    title: "Rooftop Solar Tips Before You Install",
+    title: "Understanding On-Grid, Off-Grid, and Hybrid Systems",
     excerpt:
-      "Key checks on shading, structure strength, sanction load, and maintenance that help your solar project perform longer.",
-    date: "April 2024",
-    icon: "solar",
+      "Compare the three common solar system types and learn which one fits homes, businesses, industries, and remote sites.",
+    date: "May 2026",
   },
 ] as const;
 
-function BlogIcon({ type }: { type: (typeof posts)[number]["icon"] }) {
-  const common = {
-    width: 22,
-    height: 22,
-    viewBox: "0 0 24 24",
-    fill: "none",
-    "aria-hidden": true as const,
-  };
-
-  if (type === "battery") {
-    return (
-      <svg {...common}>
-        <rect x="3" y="7" width="16" height="10" rx="2" stroke="currentColor" strokeWidth="1.7" />
-        <path d="M19 10H21V14H19" stroke="currentColor" strokeWidth="1.7" />
-        <path d="M7 10V14M11 10V14" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
-      </svg>
-    );
-  }
-
-  if (type === "solar") {
-    return (
-      <svg {...common}>
-        <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.7" />
-        <path
-          d="M12 2.5V5M12 19V21.5M2.5 12H5M19 12H21.5M5.6 5.6L7.4 7.4M16.6 16.6L18.4 18.4M18.4 5.6L16.6 7.4M7.4 16.6L5.6 18.4"
-          stroke="currentColor"
-          strokeWidth="1.7"
-          strokeLinecap="round"
-        />
-      </svg>
-    );
-  }
-
+function BookIcon() {
   return (
-    <svg {...common}>
-      <path
-        d="M4 19V5H14L20 11V19H4Z"
-        stroke="currentColor"
-        strokeWidth="1.7"
-        strokeLinejoin="round"
-      />
-      <path d="M14 5V11H20" stroke="currentColor" strokeWidth="1.7" />
-      <path d="M7 15H13" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+    <svg
+      width="23"
+      height="23"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M12 7v14" />
+      <path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z" />
     </svg>
   );
 }
@@ -80,18 +49,18 @@ export default function BlogSection() {
       <div className="mx-auto max-w-[1280px]">
         <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">
-            <p className="text-xs font-bold tracking-[0.16em] text-brand-green">BLOG</p>
+            <p className="text-[14px] font-extrabold tracking-[0.16em] text-brand-green">BLOG</p>
             <h2 className="mt-3 font-display text-[clamp(1.55rem,3.2vw,2.2rem)] font-bold leading-tight text-brand-navy">
               Renewable Energy Insights
             </h2>
-            <p className="mt-3 text-[0.95rem] leading-relaxed text-slate-500">
+            <p className="mt-3 text-[16px] leading-relaxed text-gray-500">
               Practical articles on solar planning, storage, savings, and cleaner energy for homes
               and businesses.
             </p>
           </div>
           <Link
             href="/blog"
-            className="inline-flex h-11 w-fit items-center gap-2 rounded-full bg-brand-navy px-6 text-sm font-semibold text-white transition hover:bg-[#0f3a63]"
+            className="inline-flex h-11 w-fit items-center gap-2 rounded-full bg-[#0D529C] px-6 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#2cb673]"
           >
             View Blog
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -106,24 +75,23 @@ export default function BlogSection() {
           </Link>
         </div>
 
-        <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {posts.map((post, index) => (
+        <div className="mt-10 grid items-stretch gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {posts.map((post) => (
             <article
               key={post.title}
-              className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-brand-green/40 hover:shadow-[0_16px_34px_rgba(15,23,42,0.1)] animate-fade-up"
-              style={{ animationDelay: `${index * 0.12}s` }}
+              className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-[0_14px_30px_rgba(15,23,42,0.08)]"
             >
-              <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-green/10 text-brand-green transition group-hover:bg-brand-green group-hover:text-white">
-                <BlogIcon type={post.icon} />
+              <span className="mb-5 grid h-12 w-12 place-items-center rounded-xl bg-[#2cb673]/12 text-[#2cb673]">
+                <BookIcon />
               </span>
-              <p className="mt-5 text-xs font-bold tracking-[0.14em] text-brand-green">
+              <p className="text-[14px] font-extrabold uppercase tracking-[0.16em] text-[#2cb673]">
                 {post.category}
               </p>
-              <h3 className="mt-2 text-lg font-extrabold leading-snug text-brand-navy">
+              <h3 className="mt-3 text-2xl font-extrabold leading-tight text-[#0A2540]">
                 {post.title}
               </h3>
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-500">{post.excerpt}</p>
-              <p className="mt-5 text-sm font-semibold text-slate-400">{post.date}</p>
+              <p className="mt-3 flex-1 text-[15px] leading-7 text-gray-500">{post.excerpt}</p>
+              <p className="mt-5 text-sm font-bold text-slate-500">{post.date}</p>
             </article>
           ))}
         </div>

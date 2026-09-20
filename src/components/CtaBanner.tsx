@@ -14,23 +14,23 @@ export default function CtaBanner({
   const { openQuote } = useQuoteModal();
 
   return (
-    <section className="w-full bg-gradient-to-r from-[#127c78] via-[#1aa882] to-[#35B56F]">
-      <div className="mx-auto flex max-w-[1280px] flex-col items-start justify-between gap-6 px-4 py-10 sm:flex-row sm:items-center sm:px-6 sm:py-12 lg:px-8">
+    <section className="w-full bg-gradient-to-r from-[#0A4D8D] via-[#1a9b8e] to-[#2cb673]">
+      <div className="mx-auto flex max-w-[1280px] flex-col items-start justify-between gap-8 px-4 py-12 sm:flex-row sm:items-center sm:px-6 sm:py-14 lg:px-8">
         <div className="max-w-3xl">
-          <h3 className="max-w-[640px] font-display text-[clamp(1.45rem,2.8vw,2.05rem)] font-extrabold leading-tight text-white">
+          <h3 className="page-title max-w-[720px] font-sans font-extrabold tracking-[-0.02em] !text-white">
             {title}
           </h3>
-          <p className="mt-3 max-w-[680px] text-sm leading-relaxed text-white/90 sm:text-[0.95rem]">
+          <p className="page-desc-on-dark mt-3 max-w-[680px]">
             {description}
           </p>
         </div>
         <button
           type="button"
           onClick={() => openQuote()}
-          className="inline-flex h-12 shrink-0 items-center gap-2 rounded-full bg-white px-6 text-sm font-semibold text-[#0A4D8D] shadow-[0_8px_20px_rgba(0,0,0,0.12)] transition hover:bg-slate-50"
+          className="inline-flex h-12 shrink-0 items-center gap-2 rounded-full bg-white px-7 text-sm font-bold text-[#0A2540] shadow-[0_8px_24px_rgba(0,0,0,0.18)] transition hover:bg-slate-50"
         >
           Request a Free Quote
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path
               d="M5 12H19M19 12L13 6M19 12L13 18"
               stroke="currentColor"

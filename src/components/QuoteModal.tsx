@@ -17,9 +17,9 @@ const serviceOptions = [
   "Commercial Solar",
   "Industrial Solar",
   "Hybrid / BESS",
-  "reneμ Home",
-  "reneμ Elite",
-  "reneμ Plus",
+  "rene\u03BC Home",
+  "rene\u03BC Elite",
+  "rene\u03BC Plus",
   "AMC / Service Support",
   "Site Survey",
   "Other",
@@ -244,12 +244,12 @@ export function QuoteModalProvider({ children }: { children: React.ReactNode }) 
               </div>
 
               <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                <p className="text-sm text-slate-500">
+                <p className="max-w-sm text-sm leading-6 text-slate-500">
                   Submitting opens WhatsApp with your quote details pre-filled.
                 </p>
                 <button
                   type="submit"
-                  className="inline-flex h-12 items-center justify-center rounded-full bg-brand-green px-7 text-sm font-semibold text-white shadow-[0_8px_20px_rgba(45,189,110,0.28)] transition hover:bg-brand-green-dark"
+                  className="inline-flex h-12 shrink-0 items-center justify-center whitespace-nowrap rounded-full bg-[#2cb673] px-8 text-sm font-bold text-white shadow-[0_8px_22px_rgba(44,182,115,0.5)] transition hover:bg-[#24a85f] hover:shadow-[0_10px_26px_rgba(44,182,115,0.6)]"
                 >
                   Send on WhatsApp
                 </button>

@@ -214,11 +214,11 @@ export default function Hero() {
           <div
             className={
               item.overlay === "ui"
-                ? "absolute inset-0 bg-gradient-to-r from-[#041526]/88 via-[#041526]/55 to-[#041526]/12"
-                : "absolute inset-0 bg-gradient-to-r from-[#041526]/45 via-[#041526]/18 to-transparent"
+                ? "absolute inset-0 bg-gradient-to-r from-black/88 via-black/55 to-black/15"
+                : "absolute inset-0 bg-gradient-to-r from-black/82 via-black/42 to-transparent"
             }
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#041526]/35 via-transparent to-[#041526]/12" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20" />
         </div>
       ))}
 
@@ -257,13 +257,13 @@ export default function Hero() {
           <div className="animate-fade-up delay-1 mt-4 h-[2px] w-12 rounded-full bg-brand-green" />
 
           {slide.tagline ? (
-            <p className="animate-fade-up delay-1 mt-4 text-sm font-medium text-white sm:text-base">
+            <p className="animate-fade-up delay-1 mt-4 text-base font-medium leading-relaxed text-white sm:text-lg">
               {slide.tagline}
             </p>
           ) : null}
 
           {slide.body ? (
-            <p className="animate-fade-up delay-2 mt-3 max-w-xl text-[0.82rem] leading-relaxed text-white/85 sm:text-sm">
+            <p className="animate-fade-up delay-2 mt-3 max-w-2xl text-base leading-relaxed text-white/90 sm:text-lg">
               {slide.body}
             </p>
           ) : null}

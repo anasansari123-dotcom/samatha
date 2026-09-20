@@ -2,9 +2,9 @@ import ProductPage from "@/components/ProductPage";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "reneμ Home | Samatha Green Energy Solutions",
+  title: "rene\u03BC Home | Samatha Green Energy Solutions",
   description:
-    "reneμ Home rooftop solar solutions for residences — reliable, efficient, and built for long-term savings.",
+    "rene\u03BC Home rooftop solar solutions for residences — reliable, efficient, and built for long-term savings.",
 };
 
 export default function SamathaHomePage() {

@@ -8,9 +8,9 @@ import { useQuoteModal } from "@/components/QuoteModal";
 import SearchOverlay from "@/components/SearchOverlay";
 
 const productItems = [
-  { label: "reneμ Home", href: "/products/samatha-home#renemu-home" },
-  { label: "reneμ Elite", href: "/products/samatha-elite#renemu-elite" },
-  { label: "reneμ Plus", href: "/products/samatha-plus#renemu-plus" },
+  { label: "rene\u03BC Home", href: "/products/samatha-home#renemu-home" },
+  { label: "rene\u03BC Elite", href: "/products/samatha-elite#renemu-elite" },
+  { label: "rene\u03BC Plus", href: "/products/samatha-plus#renemu-plus" },
 ];
 
 const solutionItems = [
@@ -136,13 +136,13 @@ export default function Header() {
               alt="Samatha Green Energy Solutions"
               width={360}
               height={90}
-              className="h-[4.25rem] w-auto object-contain sm:h-[4.75rem] lg:h-[5.25rem]"
+              className="h-[3.5rem] w-auto object-contain sm:h-[3.85rem] lg:h-[4.25rem]"
               priority
             />
           </Link>
         </div>
 
-        <nav ref={navRef} className="hidden shrink-0 items-center gap-5 xl:gap-7 lg:flex">
+        <nav ref={navRef} className="hidden shrink-0 items-center gap-5 xl:gap-7 lg:flex mr-10">
           {navLinks.map((link) => {
             const hasItems = Boolean(link.items?.length);
             const isOpen = openDropdown === link.label;

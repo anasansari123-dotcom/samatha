@@ -52,8 +52,8 @@ const officeMap = {
 };
 
 const officeMapsUrl =
-  "https://www.google.com/maps/place/13%C2%B001'09.3%22N+77%C2%B040'34.5%22E/@13.0192351,77.6736722,17z/data=!3m1!4b1!4m4!3m3!8m2!3d13.0192351!4d77.6762471";
-const officeMapsEmbedUrl = `https://www.google.com/maps/embed?origin=mfe&pb=!1m3!2m1!1s${officeMap.lat},${officeMap.lng}!6i17`;
+  "https://www.google.com/maps/place/13%C2%B001'09.3%22N+77%C2%B040'34.5%22E/@13.0190402,77.6728178,16.55z/data=!4m4!3m3!8m2!3d13.0192351!4d77.6762471";
+const officeMapsEmbedUrl = `https://www.google.com/maps?q=${officeMap.lat},${officeMap.lng}&hl=en&z=16&output=embed`;
 
 const quickActions = [
   {
@@ -169,40 +169,63 @@ export default function ContactDetailsSection() {
   return (
     <>
       <section id="enquiry" className="bg-[#eef3f8] px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-        <div className="mx-auto grid max-w-[1280px] items-stretch gap-6 lg:grid-cols-2 lg:gap-8">
-          <div className="rounded-[28px] bg-white px-6 py-7 shadow-[0_16px_40px_rgba(15,23,42,0.06)] sm:px-8 sm:py-8">
-            <ul className="divide-y divide-slate-100">
-              {officeDetails.map((item) => (
-                <li key={item.label} className="flex items-start gap-4 py-5 first:pt-0 last:pb-0">
-                  <span className="mt-0.5 shrink-0 text-[#2cb673]">
-                    <DetailIcon type={item.icon} />
-                  </span>
-                  <div>
-                    <p className="text-[11px] font-extrabold uppercase tracking-[0.14em] text-brand-blue">
-                      {item.label}
-                    </p>
-                    {"href" in item && item.href ? (
-                      <a
-                        href={item.href}
-                        className="mt-1 block text-[15px] font-bold leading-snug text-[#0A2540] transition hover:text-brand-green sm:text-base"
-                      >
-                        {item.value}
-                      </a>
-                    ) : (
-                      <p className="mt-1 text-[15px] font-bold leading-snug text-[#0A2540] sm:text-base">
-                        {item.value}
+        <div className="mx-auto grid max-w-[1280px] items-start gap-6 lg:grid-cols-2 lg:gap-8">
+          <div>
+            <p className="text-[14px] font-extrabold uppercase tracking-[0.16em] text-[#2cb673]">
+              Office Contact Details
+            </p>
+            <h2 className="page-title mt-3 font-display font-extrabold text-[#0A2540]">
+              Samatha Green Energy Solutions
+            </h2>
+            <p className="page-desc mt-3 max-w-xl">
+              Use the details below for enquiries, site visits, installation support, AMC
+              assistance, and renewable energy project planning.
+            </p>
+            <div className="mt-7 rounded-[28px] bg-white px-6 py-7 shadow-[0_16px_40px_rgba(15,23,42,0.06)] sm:px-8 sm:py-8">
+              <ul className="divide-y divide-slate-100">
+                {officeDetails.map((item) => (
+                  <li key={item.label} className="flex items-start gap-4 py-5 first:pt-0 last:pb-0">
+                    <span className="mt-0.5 shrink-0 text-[#2cb673]">
+                      <DetailIcon type={item.icon} />
+                    </span>
+                    <div>
+                      <p className="text-[11px] font-extrabold uppercase tracking-[0.14em] text-[#125393]">
+                        {item.label}
                       </p>
-                    )}
-                  </div>
-                </li>
-              ))}
-            </ul>
+                      {"href" in item && item.href ? (
+                        <a
+                          href={item.href}
+                          className="mt-1 block text-[15px] font-bold leading-snug text-[#0A2540] transition hover:text-brand-green sm:text-base"
+                        >
+                          {item.value}
+                        </a>
+                      ) : (
+                        <p className="mt-1 text-[15px] font-bold leading-snug text-[#0A2540] sm:text-base">
+                          {item.value}
+                        </p>
+                      )}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
-          <form
-            onSubmit={handleSubmit}
-            className="rounded-[28px] bg-white px-6 py-7 shadow-[0_16px_40px_rgba(15,23,42,0.06)] sm:px-8 sm:py-8"
-          >
+          <div>
+            <p className="text-[14px] font-extrabold uppercase tracking-[0.16em] text-[#2cb673]">
+              Send Enquiry
+            </p>
+            <h2 className="page-title mt-3 font-display font-extrabold text-[#0A2540]">
+              Tell Us About Your Requirement
+            </h2>
+            <p className="page-desc mt-3 max-w-xl">
+              Share your project or support requirement and our team will respond with the next
+              step.
+            </p>
+            <form
+              onSubmit={handleSubmit}
+              className="mt-7 rounded-[28px] bg-white px-6 py-7 shadow-[0_16px_40px_rgba(15,23,42,0.06)] sm:px-8 sm:py-8"
+            >
             <div className="grid gap-5 sm:grid-cols-2">
               <label className="block">
                 <span className="mb-2 block text-sm font-extrabold text-[#0A2540]">Name</span>
@@ -287,12 +310,13 @@ export default function ContactDetailsSection() {
               </p>
             ) : null}
           </form>
+          </div>
         </div>
       </section>
 
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-[900px] text-center">
-          <p className="text-xs font-extrabold tracking-[0.16em] text-brand-green">QUICK ACTIONS</p>
+          <p className="text-[14px] font-extrabold tracking-[0.16em] text-brand-green">QUICK ACTIONS</p>
           <h2 className="mt-3 font-display text-[clamp(1.5rem,2.8vw,2.1rem)] font-extrabold text-brand-navy">
             Reach the Right Support Channel
           </h2>
@@ -308,13 +332,13 @@ export default function ContactDetailsSection() {
               className="group flex flex-col items-center gap-3.5 text-center"
             >
               <span
-                className="flex h-[84px] w-[84px] items-center justify-center rounded-full bg-[#eef3f8] text-[#1d4f91] shadow-[0_4px_10px_rgba(15,23,42,0.08)] transition-all duration-300 group-hover:-translate-y-1 group-hover:bg-brand-green group-hover:text-white group-hover:shadow-[0_8px_0_#1f9a55,0_18px_28px_rgba(45,189,110,0.38)] sm:h-[92px] sm:w-[92px]"
+                className="flex h-[72px] w-[72px] items-center justify-center rounded-full bg-[#eef3f8] text-[#1d4f91] shadow-[0_4px_10px_rgba(15,23,42,0.08)] transition-all duration-300 ease-out group-hover:-translate-y-0.5 group-hover:bg-brand-green group-hover:text-white group-hover:shadow-[0_4px_0_#1f9a55,0_10px_18px_rgba(45,189,110,0.22)] sm:h-[80px] sm:w-[80px]"
               >
-                <span className="scale-[1.45]">
+                <span className="scale-[2]">
                   <DetailIcon type={action.icon} />
                 </span>
               </span>
-              <span className="text-[15px] font-extrabold text-[#0A2540] transition-colors duration-300 group-hover:text-brand-green sm:text-base">
+              <span className="text-[14px] font-extrabold text-[#0A2540] transition-colors duration-300 group-hover:text-brand-green sm:text-[15px]">
                 {action.label}
               </span>
             </a>
@@ -324,22 +348,22 @@ export default function ContactDetailsSection() {
 
       <section className="bg-[#f7fafc] px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-[900px] text-center">
-          <p className="text-xs font-extrabold tracking-[0.16em] text-brand-green">FIND US</p>
+          <p className="text-[14px] font-extrabold tracking-[0.16em] text-brand-green">FIND US</p>
           <h2 className="mt-3 font-display text-[clamp(1.5rem,2.8vw,2.1rem)] font-extrabold text-brand-navy">
             Office Location
           </h2>
         </div>
 
-        <div className="mx-auto mt-10 grid max-w-[1100px] overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_12px_30px_rgba(15,23,42,0.06)] lg:grid-cols-[0.9fr_1.2fr]">
-          <div className="flex flex-col justify-center p-6 sm:p-8">
+        <div className="mx-auto mt-10 grid max-w-[1280px] overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_12px_30px_rgba(15,23,42,0.06)] lg:grid-cols-[0.9fr_1.2fr]">
+          <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-10">
             <span className="flex h-11 w-11 items-center justify-center rounded-full bg-brand-green/10 text-brand-green">
               <DetailIcon type="pin" />
             </span>
-            <h3 className="mt-4 text-xl font-extrabold text-brand-navy">
+            <h3 className="page-card-title mt-4 font-extrabold text-brand-navy">
               Samatha Green Energy Solutions Pvt Ltd
             </h3>
-            <p className="mt-1 text-sm font-bold text-slate-500">Solar Energy Company</p>
-            <p className="mt-4 text-sm font-semibold leading-relaxed text-slate-600">
+            <p className="mt-1 text-base font-bold text-slate-500">Solar Energy Company</p>
+            <p className="page-desc mt-4">
               No #53, Kowdenahalli, Kalkere Main Rd, K R Puram, Bengaluru, Karnataka 560016
             </p>
             <a
@@ -352,7 +376,7 @@ export default function ContactDetailsSection() {
             </a>
           </div>
 
-          <div className="relative min-h-[280px] bg-slate-100 lg:min-h-[340px]">
+          <div className="relative min-h-[340px] bg-slate-100 lg:min-h-[460px]">
             <iframe
               title="Samatha Green Energy Solutions office location"
               src={officeMapsEmbedUrl}

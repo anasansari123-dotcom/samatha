@@ -13,16 +13,16 @@ type SearchItem = {
 
 const searchIndex: SearchItem[] = [
   { type: "Page", title: "Home", text: "Home", href: "/" },
-  { type: "Page", title: "Products", text: "Products reneμ Home Elite Plus", href: "/#products" },
+  { type: "Page", title: "Products", text: "Products rene\u03BC Home Elite Plus", href: "/#products" },
   { type: "Page", title: "Solutions", text: "On-grid off-grid hybrid ESS RTC solar solutions", href: "/solutions/on-grid" },
   { type: "Page", title: "Services", text: "Solar services energy assessment AMC", href: "/services" },
   { type: "Page", title: "About Us", text: "About Samatha Green Energy Solutions", href: "/about" },
   { type: "Page", title: "Blog", text: "Renewable energy insights articles", href: "/blog" },
   { type: "Page", title: "Contact Us", text: "Contact office enquiry quote", href: "/contact" },
 
-  { type: "Product", title: "reneμ Home", text: "Independent homes and smart living solar", href: "/products/samatha-home#renemu-home" },
-  { type: "Product", title: "reneμ Elite", text: "Premium villas and luxury solar solutions", href: "/products/samatha-elite#renemu-elite" },
-  { type: "Product", title: "reneμ Plus", text: "Commercial and industrial solar projects", href: "/products/samatha-plus#renemu-plus" },
+  { type: "Product", title: "rene\u03BC Home", text: "Independent homes and smart living solar", href: "/products/samatha-home#renemu-home" },
+  { type: "Product", title: "rene\u03BC Elite", text: "Premium villas and luxury solar solutions", href: "/products/samatha-elite#renemu-elite" },
+  { type: "Product", title: "rene\u03BC Plus", text: "Commercial and industrial solar projects", href: "/products/samatha-plus#renemu-plus" },
   {
     type: "Product",
     title: "Solar Panels",

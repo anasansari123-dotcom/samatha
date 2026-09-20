@@ -74,13 +74,13 @@ export function ContactHero() {
       <div className="absolute inset-0 bg-gradient-to-t from-[#083a6e]/30 via-transparent to-[#083a6e]/15" />
 
       <div className="relative z-10 mx-auto flex min-h-[360px] max-w-[1280px] flex-col justify-center px-4 py-16 sm:min-h-[420px] sm:px-6 lg:px-8">
-        <p className="text-[13px] font-bold uppercase tracking-[0.18em] text-[#2cb673]">
+        <p className="text-[14px] font-extrabold uppercase tracking-[0.18em] text-[#2cb673]">
           SOLAR ENERGY SOLUTIONS
         </p>
-        <h1 className="mt-3 font-display text-[clamp(2.25rem,5vw,3.5rem)] font-extrabold leading-[1.12] text-white">
+        <h1 className="page-hero-title mt-3 font-display font-extrabold text-white">
           Contact Us
         </h1>
-        <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-white/95 sm:text-[1.05rem] sm:leading-7">
+        <p className="page-desc-on-dark mt-4 max-w-2xl">
           Get in touch with Samatha Green Energy Solutions for solar consultation, site survey
           requests, installation support, AMC services, and technical assistance. Our team is ready
           to help you with complete renewable energy solutions.
@@ -94,11 +94,11 @@ export default function ContactHelpSection() {
   return (
     <section id="quote" className="bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
       <div className="mx-auto max-w-[1100px] text-center">
-        <p className="text-xs font-extrabold tracking-[0.16em] text-brand-green">CONTACT SERVICES</p>
-        <h2 className="mt-3 font-display text-[clamp(1.55rem,3.2vw,2.2rem)] font-extrabold text-brand-navy">
+        <p className="text-[14px] font-extrabold tracking-[0.16em] text-brand-green">CONTACT SERVICES</p>
+        <h2 className="page-title mt-3 font-display font-extrabold text-brand-navy">
           How Our Team Can Help
         </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-[0.95rem] font-semibold leading-relaxed text-slate-500">
+        <p className="page-desc mx-auto mt-4 max-w-2xl">
           Choose the right contact path for consultation, site planning, service support, AMC,
           monitoring, repairs, or upgrades.
         </p>
@@ -113,8 +113,8 @@ export default function ContactHelpSection() {
             <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-green/10 text-brand-green transition duration-300 group-hover:bg-brand-green group-hover:text-white">
               <HelpIcon type={card.icon} />
             </span>
-            <h3 className="mt-5 text-lg font-extrabold text-brand-navy">{card.title}</h3>
-            <p className="mt-3 text-sm font-semibold leading-relaxed text-slate-500">{card.text}</p>
+            <h3 className="page-sub-title mt-5 font-extrabold text-brand-navy">{card.title}</h3>
+            <p className="page-desc mt-3">{card.text}</p>
           </article>
         ))}
       </div>

@@ -29,13 +29,13 @@ export default function PageBanner({
       <div className="absolute inset-0 bg-gradient-to-t from-[#083a6e]/35 via-transparent to-[#083a6e]/20" />
 
       <div className="relative z-10 mx-auto flex min-h-[340px] max-w-[1280px] flex-col justify-center px-4 py-16 sm:min-h-[400px] sm:px-6 lg:px-8">
-        <p className="text-[13px] font-bold uppercase tracking-[0.18em] text-[#2cb673]">
+        <p className="text-[14px] font-extrabold uppercase tracking-[0.18em] text-[#2cb673]">
           {eyebrow}
         </p>
-        <h1 className="mt-3 max-w-3xl font-display text-[clamp(2.4rem,5.5vw,3.6rem)] font-extrabold leading-[1.1] text-white">
+        <h1 className="page-hero-title mt-3 max-w-3xl font-display font-extrabold text-white">
           {title}
         </h1>
-        <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-white/95 sm:text-[1.05rem] sm:leading-7">
+        <p className="page-desc-on-dark mt-4 max-w-2xl">
           {description}
         </p>
       </div>

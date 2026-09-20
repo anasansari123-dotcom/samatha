@@ -323,17 +323,17 @@ function ServiceContent({
   service: (typeof services)[number];
 }) {
   return (
-    <div className="flex h-full flex-col justify-center rounded-2xl p-3 transition duration-500 ease-out hover:-translate-y-2 hover:shadow-[0_18px_42px_rgba(15,23,42,0.12)] sm:p-5">
-      <p className="text-xs font-bold tracking-[0.14em] text-[#2cb673]">{service.label}</p>
-      <h3 className="mt-2 font-display text-[clamp(1.35rem,2.2vw,1.85rem)] font-extrabold leading-snug text-[#0A2540] transition-colors duration-300 hover:text-[#2cb673]">
+    <div className="flex h-full flex-col justify-center rounded-2xl p-3 sm:p-5">
+      <p className="text-[14px] font-extrabold tracking-[0.14em] text-[#2cb673]">{service.label}</p>
+      <h3 className="page-card-title mt-2 font-display font-extrabold text-[#0A2540]">
         {service.title}
       </h3>
-      <p className="mt-3 text-[0.95rem] leading-7 text-[#4A5568] sm:text-base">{service.description}</p>
-      <ul className="mt-5 space-y-3">
+      <p className="page-desc mt-3">{service.description}</p>
+      <ul className="mt-5 space-y-1.5">
         {service.points.map((point) => (
           <li
             key={point}
-            className="flex items-start gap-3 rounded-lg px-1 py-0.5 text-sm leading-relaxed text-[#334155] transition duration-300 hover:translate-x-1 hover:text-[#0A2540] sm:text-[15px]"
+            className="flex items-start gap-3 rounded-lg px-1 py-0.5 text-[15px] font-medium leading-relaxed text-[#334155] sm:text-base"
           >
             <CheckIcon />
             <span>{point}</span>
@@ -346,13 +346,13 @@ function ServiceContent({
 
 export default function SolarServicesSection() {
   return (
-    <section className="bg-[#f4f8f5] px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <section className="bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
       <div className="mx-auto max-w-[1100px] text-center">
-        <p className="text-xs font-bold tracking-[0.16em] text-[#2cb673]">SERVICES</p>
-        <h2 className="mt-3 font-display text-[clamp(2rem,4.5vw,2.85rem)] font-extrabold leading-tight text-[#0A2540]">
+        <p className="text-[14px] font-extrabold tracking-[0.16em] text-[#2cb673]">SERVICES</p>
+        <h2 className="page-title mt-3 font-display font-extrabold leading-tight text-[#0A2540]">
           Solar and Renewable Energy Services
         </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-[#64748B] sm:text-lg">
+        <p className="page-desc mx-auto mt-4 max-w-2xl">
           Explore our complete product range for homes, businesses, institutions, industries, and
           community energy requirements.
         </p>
@@ -362,7 +362,7 @@ export default function SolarServicesSection() {
         {services.map((service) => (
           <article
             key={service.title}
-            className="rounded-[28px] bg-white p-5 shadow-[0_8px_30px_rgba(15,23,42,0.06)] sm:p-8 lg:p-10"
+            className="rounded-[28px] bg-[#eef3f8] p-5 shadow-[0_8px_30px_rgba(15,23,42,0.06)] transition duration-500 ease-out hover:-translate-y-2 hover:shadow-[0_18px_42px_rgba(15,23,42,0.12)] sm:p-8 lg:p-10"
           >
             <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-10 xl:gap-12">
               {service.imageRight ? (

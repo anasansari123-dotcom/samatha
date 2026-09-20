@@ -35,10 +35,14 @@ const features = [
 
 function FeatureIcon({ type }: { type: (typeof features)[number]["icon"] }) {
   const common = {
-    width: 22,
-    height: 22,
+    width: 24,
+    height: 24,
     viewBox: "0 0 24 24",
     fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 2,
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
     "aria-hidden": true as const,
   };
 
@@ -46,76 +50,53 @@ function FeatureIcon({ type }: { type: (typeof features)[number]["icon"] }) {
     case "search":
       return (
         <svg {...common}>
-          <circle cx="11" cy="11" r="6.5" stroke="currentColor" strokeWidth="1.8" />
-          <path d="M16 16L20.2 20.2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+          <circle cx="11" cy="11" r="8" />
+          <path d="m21 21-4.3-4.3" />
         </svg>
       );
     case "gauge":
       return (
         <svg {...common}>
-          <path
-            d="M5.5 16.5A7.2 7.2 0 0 1 18.5 16.5"
-            stroke="currentColor"
-            strokeWidth="1.8"
-            strokeLinecap="round"
-          />
-          <path d="M12 16.5L16.2 11" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-          <circle cx="12" cy="16.5" r="1.4" fill="currentColor" />
+          <path d="m12 14 4-4" />
+          <path d="M3.34 19a10 10 0 1 1 17.32 0" />
         </svg>
       );
     case "chart":
       return (
         <svg {...common}>
-          <path
-            d="M5 19V12M10 19V8M15 19V13.5M20 19V6"
-            stroke="currentColor"
-            strokeWidth="1.8"
-            strokeLinecap="round"
-          />
+          <path d="M3 3v16a2 2 0 0 0 2 2h16" />
+          <path d="M18 17V9" />
+          <path d="M13 17V5" />
+          <path d="M8 17v-3" />
         </svg>
       );
     case "sun":
       return (
         <svg {...common}>
-          <circle cx="12" cy="12" r="3.4" stroke="currentColor" strokeWidth="1.8" />
-          <path
-            d="M12 3.6V6.2M12 17.8V20.4M3.6 12H6.2M17.8 12H20.4M6.3 6.3L8.1 8.1M15.9 15.9L17.7 17.7M17.7 6.3L15.9 8.1M8.1 15.9L6.3 17.7"
-            stroke="currentColor"
-            strokeWidth="1.8"
-            strokeLinecap="round"
-          />
+          <circle cx="12" cy="12" r="4" />
+          <path d="M12 2v2" />
+          <path d="M12 20v2" />
+          <path d="m4.93 4.93 1.41 1.41" />
+          <path d="m17.66 17.66 1.41 1.41" />
+          <path d="M2 12h2" />
+          <path d="M20 12h2" />
+          <path d="m6.34 17.66-1.41 1.41" />
+          <path d="m19.07 4.93-1.41 1.41" />
         </svg>
       );
     case "report":
       return (
         <svg {...common}>
-          <rect x="6.5" y="5" width="11" height="14.5" rx="2" stroke="currentColor" strokeWidth="1.8" />
-          <path d="M9 5.2H15V7.4H9V5.2Z" stroke="currentColor" strokeWidth="1.8" />
-          <path
-            d="M9.5 11H14.5M9.5 14H14.5M9.5 17H13"
-            stroke="currentColor"
-            strokeWidth="1.8"
-            strokeLinecap="round"
-          />
+          <rect width="8" height="4" x="8" y="2" rx="1" ry="1" />
+          <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+          <path d="m9 14 2 2 4-4" />
         </svg>
       );
     case "savings":
       return (
         <svg {...common}>
-          <path
-            d="M4 16.5L10.2 10.3L13.2 13.3L20 6.5"
-            stroke="currentColor"
-            strokeWidth="1.8"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M14.5 6.5H20V12"
-            stroke="currentColor"
-            strokeWidth="1.8"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
+          <path d="M16 17h6v-6" />
+          <path d="m22 17-8.5-8.5-5 5L2 7" />
         </svg>
       );
   }
@@ -126,13 +107,13 @@ export default function EnergyAssessmentSection() {
     <section className="bg-[#f4f8fc] px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
       <div className="mx-auto grid max-w-[1280px] gap-10 lg:grid-cols-[0.92fr_1.18fr] lg:items-start lg:gap-12">
         <div>
-          <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#2cb673]">
+          <p className="text-[14px] font-extrabold uppercase tracking-[0.16em] text-[#2cb673]">
             ENERGY ASSESSMENT
           </p>
-          <h2 className="mt-3 max-w-lg font-display text-[clamp(1.7rem,3.2vw,2.45rem)] font-extrabold leading-[1.15] text-[#0A2540]">
+          <h2 className="page-title mt-3 max-w-lg font-display font-extrabold text-[#0A2540]">
             Smarter Energy Planning Before System Selection
           </h2>
-          <p className="mt-4 max-w-lg text-[15px] leading-7 text-[#5B6B7C] sm:text-base sm:leading-8">
+          <p className="page-desc mt-4 max-w-lg">
             Our Energy Assessment services provide a detailed analysis of energy consumption,
             system performance, and efficiency gaps to identify cost-saving opportunities.
             Designed for residential, commercial, and industrial facilities, they help optimize
@@ -159,10 +140,10 @@ export default function EnergyAssessmentSection() {
               <span className="text-[#2cb673]">
                 <FeatureIcon type={feature.icon} />
               </span>
-              <h3 className="mt-4 text-[1.05rem] font-extrabold leading-snug text-[#0A2540]">
+              <h3 className="mt-4 !text-[18px] !leading-snug font-extrabold text-[#0A2540]">
                 {feature.title}
               </h3>
-              <p className="mt-2 text-[14px] leading-6 text-[#64748B]">{feature.description}</p>
+              <p className="page-desc mt-2">{feature.description}</p>
             </article>
           ))}
         </div>

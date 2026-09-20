@@ -46,13 +46,13 @@ export function ProjectCard({
         {hasBakedWatermark ? null : <BrandWatermark />}
       </div>
       <div className="flex min-h-[8.25rem] flex-1 flex-col pt-4 text-left">
-        <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#2F9B69]">
+        <p className="text-[14px] font-extrabold uppercase tracking-[0.16em] text-[#2F9B69]">
           {project.category}
         </p>
-        <h3 className="mt-2 line-clamp-2 min-h-[2.7em] text-[1.15rem] font-extrabold leading-[1.35] text-[#0A2540] sm:text-[1.2rem]">
+        <h3 className="mt-2 line-clamp-2 min-h-[2.7em] text-[1.28rem] font-extrabold leading-[1.35] text-[#0A2540] sm:text-[1.35rem]">
           {project.title}
         </h3>
-        <p className="mt-auto pt-2 text-[13px] font-normal leading-snug text-[#8a94a6]">
+        <p className="mt-auto pt-2 text-sm font-medium leading-snug text-[#8a94a6]">
           {project.location}
         </p>
       </div>

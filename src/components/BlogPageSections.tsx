@@ -1,4 +1,3 @@
-import Link from "next/link";
 import PageBanner from "@/components/PageBanner";
 
 const articles = [
@@ -90,11 +89,11 @@ export default function BlogArticlesSection() {
   return (
     <section className="bg-[#f4f8fc] px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
       <div className="mx-auto max-w-[920px] text-center">
-        <p className="text-xs font-bold tracking-[0.16em] text-[#2cb673]">LATEST ARTICLES</p>
-        <h2 className="mt-3 font-display text-[clamp(1.65rem,3.4vw,2.35rem)] font-extrabold leading-tight text-[#0A2540]">
+        <p className="text-[14px] font-extrabold tracking-[0.16em] text-[#2cb673]">LATEST ARTICLES</p>
+        <h2 className="page-title mt-3 font-display font-extrabold text-[#0A2540]">
           Renewable Energy Insights
         </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-[#64748B]">
+        <p className="page-desc mx-auto mt-4 max-w-2xl">
           Explore practical guidance on solar, battery storage, hybrid energy systems, and smart
           renewable energy planning.
         </p>
@@ -109,37 +108,19 @@ export default function BlogArticlesSection() {
             <span className="text-[#2cb673]">
               <BookIcon />
             </span>
-            <p className="mt-5 text-[11px] font-bold uppercase tracking-[0.16em] text-[#2cb673]">
+            <p className="mt-5 text-[14px] font-extrabold uppercase tracking-[0.16em] text-[#2cb673]">
               {article.category}
             </p>
-            <h3 className="mt-3 text-[1.28rem] font-extrabold leading-[1.3] text-[#0A2540] sm:text-[1.38rem]">
+            <h3 className="mt-3 !text-[24px] !leading-snug font-extrabold text-[#0A2540]">
               {article.title}
             </h3>
-            <p className="mt-3 flex-1 text-[15px] leading-7 text-[#64748B]">{article.excerpt}</p>
-            <div className="mt-6 flex items-center gap-2 text-[13px] font-medium text-[#6B7A8D]">
+            <p className="page-desc mt-3 flex-1">{article.excerpt}</p>
+            <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-[#6B7A8D]">
               <CalendarIcon />
               <span>{article.date}</span>
             </div>
           </article>
         ))}
-      </div>
-
-      <div className="mx-auto mt-12 flex max-w-[1200px] justify-center">
-        <Link
-          href="/contact"
-          className="inline-flex h-11 items-center gap-2 rounded-full bg-[#0A4D8D] px-6 text-sm font-semibold text-white transition hover:bg-[#2cb673]"
-        >
-          Talk to an Expert
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path
-              d="M5 12H19M19 12L13 6M19 12L13 18"
-              stroke="currentColor"
-              strokeWidth="1.8"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </Link>
       </div>
     </section>
   );

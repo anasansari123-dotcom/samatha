@@ -90,45 +90,43 @@ export default function SystemTypesSection({
     <>
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-[1100px] text-center">
-          <p className="text-xs font-bold tracking-[0.16em] text-brand-green">SYSTEM TYPES</p>
-          <h2 className="mt-3 font-display text-[clamp(1.6rem,3.2vw,2.25rem)] font-bold text-brand-navy">
+          <p className="text-[14px] font-extrabold tracking-[0.16em] text-brand-green">SYSTEM TYPES</p>
+          <h2 className="page-title mt-3 font-display font-bold text-brand-navy">
             Choose the Right Solar System
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-[0.95rem] leading-relaxed text-slate-500">
+          <p className="page-desc mx-auto mt-4 max-w-2xl">
             The first three system types cover standard grid connected, independent, and backup
             ready solar requirements.
           </p>
         </div>
 
-        <div className="mx-auto mt-10 grid max-w-[1200px] gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mx-auto mt-10 grid max-w-[1180px] items-stretch gap-5 lg:grid-cols-3">
           {systemCards.map((card) => {
             const active = activeSolution === card.id;
             return (
               <article
                 key={card.id}
                 id={card.id}
-                className={`scroll-mt-28 rounded-2xl border bg-white p-6 text-center shadow-[0_10px_28px_rgba(15,23,42,0.05)] transition ${
-                  active
-                    ? "border-brand-green/50 ring-1 ring-brand-green/20"
-                    : "border-slate-200"
+                className={`flex h-full scroll-mt-28 flex-col rounded-[20px] border bg-[#F4F8FB] px-7 py-8 text-left ${
+                  active ? "border-brand-green/45 ring-1 ring-brand-green/20" : "border-[#E6EDF4]"
                 }`}
               >
-                <div className="relative mx-auto h-[210px] w-full max-w-[240px]">
-                  <Image
-                    src={card.image}
-                    alt={card.title}
-                    fill
-                    className="object-contain"
-                    sizes="240px"
-                  />
-                </div>
-                <h3 className="mt-2 text-xl font-bold text-brand-navy">{card.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate-500">{card.description}</p>
-                <Link
-                  href={card.href}
-                  className="mt-5 inline-flex text-sm font-semibold text-brand-green hover:text-brand-green-dark"
-                >
-                  Learn more →
+                <Link href={card.href} className="flex h-full flex-col no-underline">
+                  <div className="relative mx-auto h-[190px] w-full max-w-[200px]">
+                    <Image
+                      src={card.image}
+                      alt=""
+                      fill
+                      className="object-contain mix-blend-multiply"
+                      sizes="200px"
+                    />
+                  </div>
+                  <h3 className="page-card-title mt-5 font-extrabold text-[#0B2545]">
+                    {card.title}
+                  </h3>
+                  <p className="page-desc mt-3">
+                    {card.description}
+                  </p>
                 </Link>
               </article>
             );
@@ -138,20 +136,20 @@ export default function SystemTypesSection({
 
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-[820px] text-center">
-          <p className="text-[11px] font-extrabold tracking-[0.18em] text-brand-green">
+          <p className="text-[14px] font-extrabold tracking-[0.18em] text-brand-green">
             COMPARISON
           </p>
-          <h2 className="mt-3 font-display text-[clamp(1.7rem,3.2vw,2.35rem)] font-extrabold text-brand-navy">
+          <h2 className="page-title mt-3 font-display font-extrabold text-brand-navy">
             System Comparison Table
           </h2>
-          <p className="mx-auto mt-4 max-w-[640px] text-[15px] leading-relaxed text-slate-500">
+          <p className="page-desc mx-auto mt-4 max-w-[640px]">
             Compare On-Grid, Off-Grid, and Hybrid solar systems across grid connection, backup,
             outage support, surplus energy handling, and cost.
           </p>
         </div>
 
-        <div className="mx-auto mt-10 max-w-[920px] overflow-x-auto rounded-[22px] border border-[#e6edf5] bg-white shadow-[0_10px_30px_rgba(15,23,42,0.06)]">
-          <table className="min-w-[720px] w-full border-collapse text-left">
+        <div className="mx-auto mt-10 max-w-[1210px] overflow-x-auto rounded-[22px] border border-[#e6edf5] bg-white shadow-[0_10px_30px_rgba(15,23,42,0.06)]">
+          <table className="min-w-[980px] w-full border-collapse text-left">
             <colgroup>
               <col className="w-[30%]" />
               <col className="w-[23.3%]" />
@@ -160,14 +158,14 @@ export default function SystemTypesSection({
             </colgroup>
             <thead>
               <tr className="bg-brand-blue text-white">
-                <th className="px-6 py-[18px] text-[15px] font-bold">Property</th>
-                <th className="border-l border-white/20 px-6 py-[18px] text-[15px] font-bold">
+                <th className="px-6 py-[18px] text-base font-bold">Property</th>
+                <th className="border-l border-white/20 px-6 py-[18px] text-base font-bold">
                   On-Grid
                 </th>
-                <th className="border-l border-white/20 px-6 py-[18px] text-[15px] font-bold">
+                <th className="border-l border-white/20 px-6 py-[18px] text-base font-bold">
                   Off-Grid
                 </th>
-                <th className="border-l border-white/20 px-6 py-[18px] text-[15px] font-bold">
+                <th className="border-l border-white/20 px-6 py-[18px] text-base font-bold">
                   Hybrid
                 </th>
               </tr>
@@ -178,12 +176,12 @@ export default function SystemTypesSection({
                   key={row.property}
                   className={index % 2 === 0 ? "bg-white" : "bg-[#f4f8fc]"}
                 >
-                  <td className="px-6 py-5 text-[15px] font-bold text-brand-navy">
+                  <td className="px-6 py-5 text-base font-bold text-brand-navy">
                     {row.property}
                   </td>
-                  <td className="px-6 py-5 text-[14px] font-medium text-slate-500">{row.onGrid}</td>
-                  <td className="px-6 py-5 text-[14px] font-medium text-slate-500">{row.offGrid}</td>
-                  <td className="px-6 py-5 text-[14px] font-medium text-slate-500">{row.hybrid}</td>
+                  <td className="px-6 py-5 text-[15px] font-semibold text-slate-500">{row.onGrid}</td>
+                  <td className="px-6 py-5 text-[15px] font-semibold text-slate-500">{row.offGrid}</td>
+                  <td className="px-6 py-5 text-[15px] font-semibold text-slate-500">{row.hybrid}</td>
                 </tr>
               ))}
             </tbody>
