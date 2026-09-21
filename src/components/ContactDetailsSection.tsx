@@ -47,13 +47,12 @@ const serviceOptions = [
 ];
 
 const officeMap = {
-  lat: 13.0192351,
-  lng: 77.6762471,
+  lat: 13.0192437,
+  lng: 77.6788921,
 };
 
-const officeMapsUrl =
-  "https://www.google.com/maps/place/13%C2%B001'09.3%22N+77%C2%B040'34.5%22E/@13.0190402,77.6728178,16.55z/data=!4m4!3m3!8m2!3d13.0192351!4d77.6762471";
-const officeMapsEmbedUrl = `https://www.google.com/maps?q=${officeMap.lat},${officeMap.lng}&hl=en&z=16&output=embed`;
+const officeMapsUrl = "https://www.google.com/maps?q=13.0192437,77.6788921&z=17&hl=en";
+const officeMapsEmbedUrl = `https://www.google.com/maps?q=${officeMap.lat},${officeMap.lng}&hl=en&z=17&output=embed`;
 
 const quickActions = [
   {

@@ -1,6 +1,4 @@
-"use client";
-
-import { useQuoteModal } from "@/components/QuoteModal";
+import Link from "next/link";
 
 type CtaBannerProps = {
   title?: string;
@@ -11,8 +9,6 @@ export default function CtaBanner({
   title = "Ready to Switch to Solar Energy?",
   description = "Get expert guidance and a customized solar solution for your property.",
 }: CtaBannerProps) {
-  const { openQuote } = useQuoteModal();
-
   return (
     <section className="w-full bg-gradient-to-r from-[#0A4D8D] via-[#1a9b8e] to-[#2cb673]">
       <div className="mx-auto flex max-w-[1280px] flex-col items-start justify-between gap-8 px-4 py-12 sm:flex-row sm:items-center sm:px-6 sm:py-14 lg:px-8">
@@ -24,9 +20,8 @@ export default function CtaBanner({
             {description}
           </p>
         </div>
-        <button
-          type="button"
-          onClick={() => openQuote()}
+        <Link
+          href="/contact#enquiry"
           className="inline-flex h-12 shrink-0 items-center gap-2 rounded-full bg-white px-7 text-sm font-bold text-[#0A2540] shadow-[0_8px_24px_rgba(0,0,0,0.18)] transition hover:bg-slate-50"
         >
           Request a Free Quote
@@ -39,7 +34,7 @@ export default function CtaBanner({
               strokeLinejoin="round"
             />
           </svg>
-        </button>
+        </Link>
       </div>
     </section>
   );
