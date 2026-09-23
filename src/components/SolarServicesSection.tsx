@@ -317,13 +317,13 @@ function CheckIcon() {
 
 function ServiceImage({ src, alt }: { src: string; alt: string }) {
   return (
-    <div className="group relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-slate-100 shadow-[0_8px_24px_rgba(15,23,42,0.06)] transition duration-500 ease-out hover:scale-[1.02] hover:shadow-[0_18px_40px_rgba(15,23,42,0.14)]">
+    <div className="group relative aspect-[5/4] w-full min-h-[280px] overflow-hidden rounded-2xl bg-slate-100 shadow-[0_8px_24px_rgba(15,23,42,0.06)] transition duration-500 ease-out hover:scale-[1.02] hover:shadow-[0_18px_40px_rgba(15,23,42,0.14)] sm:min-h-[320px] lg:min-h-[400px]">
       <Image
         src={src}
         alt={alt}
         fill
         className="object-cover transition duration-500 ease-out group-hover:scale-105"
-        sizes="(max-width: 1024px) 100vw, 540px"
+        sizes="(max-width: 1024px) 100vw, 620px"
       />
     </div>
   );
@@ -371,17 +371,28 @@ export default function SolarServicesSection() {
       </div>
 
       <div className="mx-auto mt-12 flex max-w-[1200px] flex-col gap-8 sm:gap-10">
-        {visibleServices.map((service) => (
+        {visibleServices.map((service, index) => {
+          const imageRight = index % 2 === 1;
+          return (
           <article
             key={service.title}
             className="rounded-[28px] bg-[#eef3f8] p-5 shadow-[0_8px_30px_rgba(15,23,42,0.06)] transition duration-500 ease-out hover:-translate-y-2 hover:shadow-[0_18px_42px_rgba(15,23,42,0.12)] sm:p-8 lg:p-10"
           >
-            <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-10 xl:gap-12">
-              <ServiceImage src={service.image} alt={service.title} />
-              <ServiceContent service={service} />
+            <div
+              className={`grid items-center gap-6 lg:gap-8 ${
+                imageRight ? "lg:grid-cols-[0.9fr_1.15fr]" : "lg:grid-cols-[1.15fr_0.9fr]"
+              }`}
+            >
+              <div className={imageRight ? "lg:order-2" : undefined}>
+                <ServiceImage src={service.image} alt={service.title} />
+              </div>
+              <div className={imageRight ? "lg:order-1" : undefined}>
+                <ServiceContent service={service} />
+              </div>
             </div>
           </article>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
