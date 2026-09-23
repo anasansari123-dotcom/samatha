@@ -124,7 +124,7 @@ export default function Footer({ showCta = false }: { showCta?: boolean }) {
                   key={label}
                   href={href}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   aria-label={label}
                   className="grid h-10 w-10 place-items-center rounded-full bg-white/10 text-white transition hover:bg-[#2cb673]"
                 >

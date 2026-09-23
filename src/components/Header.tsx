@@ -18,10 +18,6 @@ const solutionItems = [
   { label: "Off grid", href: "/solutions/off-grid#off-grid" },
   { label: "Hybrid", href: "/solutions/hybrid#hybrid" },
   { label: "ESS", href: "/solutions/ess#ess" },
-  {
-    label: "Round the Clock Renewable Energy (RTC) (Solar + wind + BESS/Lithium-ion Battery)",
-    href: "/solutions/rtc#rtc",
-  },
 ];
 
 const navLinks = [
@@ -37,7 +33,6 @@ const navLinks = [
     href: "/solutions/on-grid",
     dropdown: true,
     items: solutionItems,
-    wide: true,
   },
   { label: "Services", href: "/services" },
   { label: "About Us", href: "/about" },

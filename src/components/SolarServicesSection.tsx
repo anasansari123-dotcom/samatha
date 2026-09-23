@@ -281,6 +281,18 @@ const services = [
   },
 ] as const;
 
+const hiddenServiceTitles = new Set([
+  "Solar Hybrid Generator",
+  "Solar Fence Energy System",
+  "Solar Water Heater",
+  "Solar CCTV Systems",
+  "Grid Based and Solar Based EV Charging Infrastructure",
+  "Microgrid Solutions",
+  "Round the Clock Renewable Energy (RTC) (Solar + wind + BESS/Lithium-ion Battery)",
+]);
+
+const visibleServices = services.filter((service) => !hiddenServiceTitles.has(service.title));
+
 function CheckIcon() {
   return (
     <svg
@@ -359,7 +371,7 @@ export default function SolarServicesSection() {
       </div>
 
       <div className="mx-auto mt-12 flex max-w-[1200px] flex-col gap-8 sm:gap-10">
-        {services.map((service) => (
+        {visibleServices.map((service) => (
           <article
             key={service.title}
             className="rounded-[28px] bg-[#eef3f8] p-5 shadow-[0_8px_30px_rgba(15,23,42,0.06)] transition duration-500 ease-out hover:-translate-y-2 hover:shadow-[0_18px_42px_rgba(15,23,42,0.12)] sm:p-8 lg:p-10"

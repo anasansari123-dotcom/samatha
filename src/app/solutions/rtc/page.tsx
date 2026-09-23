@@ -1,11 +1,13 @@
 import SolutionPage from "@/components/SolutionPage";
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "RTC Renewable Energy | Samatha",
+export const metadata = createPageMetadata({
+  title: "RTC Renewable Energy",
   description:
-    "Round the Clock Renewable Energy with solar, wind, and BESS/lithium-ion battery.",
-};
+    "Round the Clock renewable energy with solar, wind, and battery storage.",
+  path: "/solutions/rtc",
+  index: false,
+});
 
 export default function RtcPage() {
   return <SolutionPage solution="rtc" />;

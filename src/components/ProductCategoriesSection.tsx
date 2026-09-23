@@ -113,7 +113,7 @@ export default function ProductCategoriesSection({
       <div className="mx-auto max-w-[920px] text-center">
         <p className="text-[14px] font-extrabold uppercase tracking-[0.16em] text-[#2cb673]">Products</p>
         <h2 className="page-title mt-3 font-sans font-extrabold tracking-[-0.02em] text-[#0A2540]">
-          Our Products Categories - rene\u03BCX
+          {`Our Products Categories - rene\u03BCX`}
         </h2>
         <p className="page-desc mx-auto mt-3 max-w-2xl">
           Choose the right service category for your property type, energy usage, monitoring needs,

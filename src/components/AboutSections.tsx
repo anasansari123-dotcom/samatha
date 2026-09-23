@@ -5,7 +5,7 @@ export default function AboutHero() {
     <section className="relative min-h-[360px] overflow-hidden bg-[#0A4D8D] sm:min-h-[420px]">
       <Image
         src="/slide-2.png"
-        alt=""
+        alt="Rooftop solar installation by Samatha Green Energy Solutions"
         fill
         priority
         className="object-cover object-[70%_center]"

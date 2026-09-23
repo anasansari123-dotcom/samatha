@@ -20,7 +20,7 @@ export default function SolutionPage({ solution }: { solution: SolutionKey }) {
       </main>
       <CtaBanner
         title="Need Help Choosing the Right Solar System?"
-        description="Our experts will compare on-grid, off-grid, hybrid, ESS, and Round the Clock Renewable Energy (RTC) (Solar + wind + BESS/Lithium-ion Battery) options for your property."
+        description="Our experts will compare on-grid, off-grid, hybrid, and ESS options for your property."
       />
       <Footer />
     </div>

@@ -14,7 +14,7 @@ type SearchItem = {
 const searchIndex: SearchItem[] = [
   { type: "Page", title: "Home", text: "Home", href: "/" },
   { type: "Page", title: "Products", text: "Products rene\u03BC Home Elite Plus", href: "/#products" },
-  { type: "Page", title: "Solutions", text: "On-grid off-grid hybrid ESS RTC solar solutions", href: "/solutions/on-grid" },
+  { type: "Page", title: "Solutions", text: "On-grid off-grid hybrid ESS solar solutions", href: "/solutions/on-grid" },
   { type: "Page", title: "Services", text: "Solar services energy assessment AMC", href: "/services" },
   { type: "Page", title: "About Us", text: "About Samatha Green Energy Solutions", href: "/about" },
   { type: "Page", title: "Blog", text: "Renewable energy insights articles", href: "/blog" },
@@ -52,12 +52,6 @@ const searchIndex: SearchItem[] = [
   { type: "Solution", title: "Off grid", text: "Off-grid solar system", href: "/solutions/off-grid#off-grid" },
   { type: "Solution", title: "Hybrid", text: "Hybrid solar system", href: "/solutions/hybrid#hybrid" },
   { type: "Solution", title: "ESS", text: "Energy Storage System battery backup", href: "/solutions/ess#ess" },
-  {
-    type: "Solution",
-    title: "Round the Clock Renewable Energy (RTC) (Solar + wind + BESS/Lithium-ion Battery)",
-    text: "Round the Clock Renewable Energy (RTC) (Solar + wind + BESS/Lithium-ion Battery)",
-    href: "/solutions/rtc#rtc",
-  },
   {
     type: "Solution",
     title: "On-Grid Solar System",
@@ -148,7 +142,7 @@ const searchIndex: SearchItem[] = [
   {
     type: "FAQ",
     title: "What renewable energy solutions do you offer?",
-    text: "On-grid, off-grid, hybrid solar, BESS, rooftop systems, and RTC solutions.",
+    text: "On-grid, off-grid, hybrid solar, BESS, and rooftop systems.",
     href: "/#faq",
   },
   {

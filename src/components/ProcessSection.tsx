@@ -5,11 +5,6 @@ const provideItems = [
   { label: "Off-Grid Solar Systems", href: "/solutions/off-grid#off-grid", icon: "battery" },
   { label: "Hybrid Solar Systems", href: "/solutions/hybrid#hybrid", icon: "copy" },
   { label: "Energy Storage Systems (ESS)", href: "/solutions/ess#ess", icon: "battery" },
-  {
-    label: "Round the Clock Renewable Energy (RTC) (Solar + wind + BESS/Lithium-ion Battery)",
-    href: "/solutions/rtc#rtc",
-    icon: "clock",
-  },
   { label: "Rooftop Solar Solutions", href: "/services", icon: "house" },
   { label: "Ground Mounted Solar Systems", href: "/services", icon: "pin" },
   { label: "Solar Carports", href: "/services", icon: "building" },
@@ -94,13 +89,6 @@ function StrokeIcon({ type, size = 22 }: { type: IconName; size?: number }) {
           <rect width="7" height="7" x="14" y="3" rx="1" />
           <rect width="7" height="7" x="14" y="14" rx="1" />
           <rect width="7" height="7" x="3" y="14" rx="1" />
-        </svg>
-      );
-    case "clock":
-      return (
-        <svg {...common}>
-          <circle cx="12" cy="12" r="10" />
-          <polyline points="12 6 12 12 16 14" />
         </svg>
       );
     case "user":

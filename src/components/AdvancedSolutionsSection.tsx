@@ -11,14 +11,6 @@ const advancedCards = [
     description:
       "A smart battery hub that manages the timing and flow of electricity to save money and provide backup protection during blackouts.",
   },
-  {
-    id: "rtc" as const,
-    href: "/solutions/rtc#rtc",
-    title: "Round the Clock Renewable Energy (RTC) (Solar + wind + BESS/Lithium-ion Battery)",
-    image: "/rtc.jpg",
-    description:
-      "Our Round the Clock Renewable Energy (RTC) (Solar + wind + BESS/Lithium-ion Battery) systems deliver uninterrupted power through the intelligent integration of solar energy, battery storage, wind, and smart power management. Designed for continuous energy supply, they reduce dependency on conventional grid electricity and fuel sources such as diesel generators.",
-  },
 ];
 
 export default function AdvancedSolutionsSection({
@@ -32,16 +24,15 @@ export default function AdvancedSolutionsSection({
         <div className="mx-auto max-w-[1000px] text-center">
           <p className="text-[14px] font-extrabold tracking-[0.16em] text-brand-green">ADVANCED SOLUTIONS</p>
           <h2 className="page-title mt-3 font-display font-bold leading-tight text-brand-navy">
-            Energy Storage and Round the Clock Renewable Energy (RTC) (Solar + wind +
-            BESS/Lithium-ion Battery) Solutions
+            Energy Storage Solutions
           </h2>
           <p className="page-desc mx-auto mt-4 max-w-3xl">
-            For customers who need stronger backup, smarter energy control, and continuous
-            renewable power, we design advanced storage and round-the-clock systems.
+            For customers who need stronger backup, smarter energy control, and reliable
+            renewable power, we design advanced storage systems.
           </p>
         </div>
 
-        <div className="mx-auto mt-10 grid max-w-[1180px] items-stretch gap-5 lg:grid-cols-2">
+        <div className="mx-auto mt-10 grid max-w-[580px] items-stretch gap-5">
           {advancedCards.map((card) => {
             const active = activeSolution === card.id;
             return (

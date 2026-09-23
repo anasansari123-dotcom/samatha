@@ -18,7 +18,7 @@ export default function PageBanner({
     <section className="relative min-h-[340px] overflow-hidden bg-[#0A4D8D] sm:min-h-[400px]">
       <Image
         src={image}
-        alt=""
+        alt={`${title} — Samatha Green Energy Solutions`}
         fill
         priority
         className="object-cover object-[70%_center]"

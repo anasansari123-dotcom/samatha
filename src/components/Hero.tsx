@@ -11,6 +11,7 @@ type TitleLine = {
 
 type Slide = {
   image: string;
+  imageAlt: string;
   title: TitleLine[];
   tagline?: ReactNode;
   body?: ReactNode;
@@ -25,6 +26,7 @@ type Slide = {
 const slides: Slide[] = [
   {
     image: "/slide-2.png",
+    imageAlt: "Rooftop solar and clean energy solutions by Samatha Green Energy",
     title: [
       { text: "ONE PARTNER.", color: "green" },
       { text: "ALL ENERGY", color: "green" },
@@ -44,6 +46,7 @@ const slides: Slide[] = [
   },
   {
     image: "/slide-4.png",
+    imageAlt: "Professional solar installation for homes and businesses",
     title: [
       { text: "SMART", color: "green" },
       { text: "SOLUTIONS.", color: "green" },
@@ -62,6 +65,7 @@ const slides: Slide[] = [
   },
   {
     image: "/slide-3.png",
+    imageAlt: "Solar energy consultation with Samatha Green Energy experts",
     title: [
       { text: "CONSULT", color: "green" },
       { text: "WITH US.", color: "white" },
@@ -86,6 +90,7 @@ const slides: Slide[] = [
   },
   {
     image: "/slide-5.png",
+    imageAlt: "Samatha digital platform for solar monitoring and performance tracking",
     title: [
       { text: "SMART DIGITAL", color: "green" },
       { text: "PLATFORM.", color: "white" },
@@ -112,6 +117,7 @@ const slides: Slide[] = [
   },
   {
     image: "/slide-1.png",
+    imageAlt: "Hybrid solar system with intelligent battery backup",
     title: [
       { text: "INTELLIGENT", color: "green" },
       { text: "ENERGY.", color: "green" },
@@ -126,6 +132,7 @@ const slides: Slide[] = [
   },
   {
     image: "/slide-6.png",
+    imageAlt: "Commercial and industrial solar installation by Samatha",
     title: [
       { text: "COMMERCIAL &", color: "green" },
       { text: "INDUSTRIAL", color: "green" },
@@ -205,7 +212,7 @@ export default function Hero() {
         >
           <Image
             src={item.image}
-            alt=""
+            alt={item.imageAlt}
             fill
             priority={i === 0}
             className={`object-cover ${item.imagePosition ?? "object-center"}`}
