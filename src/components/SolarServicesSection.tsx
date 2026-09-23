@@ -317,7 +317,7 @@ function CheckIcon() {
 
 function ServiceImage({ src, alt }: { src: string; alt: string }) {
   return (
-    <div className="group relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-slate-100 shadow-[0_8px_24px_rgba(15,23,42,0.06)] transition duration-500 ease-out hover:scale-[1.02] hover:shadow-[0_18px_40px_rgba(15,23,42,0.14)] sm:aspect-[5/4] lg:min-h-[320px] lg:aspect-auto lg:h-full lg:min-h-[360px]">
+    <div className="group relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-slate-100 shadow-[0_8px_24px_rgba(15,23,42,0.06)] transition duration-500 ease-out hover:scale-[1.02] hover:shadow-[0_18px_40px_rgba(15,23,42,0.14)]">
       <Image
         src={src}
         alt={alt}
@@ -335,7 +335,7 @@ function ServiceContent({
   service: (typeof services)[number];
 }) {
   return (
-    <div className="flex h-full flex-col justify-center rounded-2xl p-3 sm:p-5">
+    <div className="flex h-full flex-col justify-start rounded-2xl p-3 sm:p-5">
       <p className="text-[14px] font-extrabold tracking-[0.14em] text-[#2cb673]">{service.label}</p>
       <h3 className="page-card-title mt-2 font-display font-extrabold text-[#0A2540]">
         {service.title}
@@ -377,17 +377,8 @@ export default function SolarServicesSection() {
             className="rounded-[28px] bg-[#eef3f8] p-5 shadow-[0_8px_30px_rgba(15,23,42,0.06)] transition duration-500 ease-out hover:-translate-y-2 hover:shadow-[0_18px_42px_rgba(15,23,42,0.12)] sm:p-8 lg:p-10"
           >
             <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-10 xl:gap-12">
-              {service.imageRight ? (
-                <>
-                  <ServiceContent service={service} />
-                  <ServiceImage src={service.image} alt={service.title} />
-                </>
-              ) : (
-                <>
-                  <ServiceImage src={service.image} alt={service.title} />
-                  <ServiceContent service={service} />
-                </>
-              )}
+              <ServiceImage src={service.image} alt={service.title} />
+              <ServiceContent service={service} />
             </div>
           </article>
         ))}
